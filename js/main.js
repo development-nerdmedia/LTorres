@@ -7,6 +7,10 @@ document.body.addEventListener("mousemove", e => {
     x: e.clientX,
     y: e.clientY,
   })
+  gsap.to(".ht-cursor3", {
+    x: e.clientX,
+    y: e.clientY,
+  })
 })
 
 $(".item-slider2").hover(function () {
@@ -20,6 +24,12 @@ $(".call").hover(function () {
   $(".ht-cursor2").addClass("mostrar");
 }, function () {
   $(".ht-cursor2").removeClass("mostrar");
+});
+
+$(".call.interna").hover(function () {
+  $(".ht-cursor3").addClass("mostrar");
+}, function () {
+  $(".ht-cursor3").removeClass("mostrar");
 });
 
 
@@ -123,6 +133,8 @@ MyApp = {
   sliderProyecto:{
     init: function () {
       var swiper = new Swiper(".slider-proyecto", {
+        noSwiping: true,
+        noSwipingClass: 'item-slider-proyecto',
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",

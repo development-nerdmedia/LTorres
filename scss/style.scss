@@ -30,7 +30,8 @@ body.hide-scrolling {
 }
 
 .ht-cursor,
-.ht-cursor2{
+.ht-cursor2,
+.ht-cursor3{
     position: fixed;
     pointer-events: none;
     z-index: 999;
@@ -41,7 +42,8 @@ body.hide-scrolling {
     left: -60px;
     z-index: 50;
     .ht-cursor-text,
-    .ht-cursor-text2{
+    .ht-cursor-text2,
+    .ht-cursor-text3{
         background: linear-gradient(152.61deg, #FD6C4C 14.16%, #FE4920 88.28%);
         position: relative;
       display: flex;
@@ -62,7 +64,8 @@ body.hide-scrolling {
 
       }
     }
-    .ht-cursor-text2{
+    .ht-cursor-text2,
+    .ht-cursor-text3{
         background: #fff;
         color: var(--color-anaranjado);
         width: 138px;
@@ -74,10 +77,12 @@ body.hide-scrolling {
   }
   
   .ht-cursor.mostrar,
-  .ht-cursor2.mostrar{
+  .ht-cursor2.mostrar,
+  .ht-cursor3.mostrar{
     // transform: scale(1);
     .ht-cursor-text,
-    .ht-cursor-text2{
+    .ht-cursor-text2,
+    .ht-cursor-text3{
       transform: scale(1);
     }
   }
@@ -1465,5 +1470,139 @@ section.slider-proyecto{
         font-family: var(--fuente-Raleway);
         font-size: 70px;
         font-weight: 800;
+        bottom: 100px !important;
+    }
+    .datoSlider{
+        position: absolute;
+        bottom: 150px;
+        width: 730px;
+        right: 15.89vw;
+        z-index: 1;
+        border-bottom: 2px solid #fff;
+        h3{
+            font-family: var(--fuente-Raleway);
+            font-weight: 800;
+            font-size: 40px;
+            color: #fff;
+            padding-bottom: 20px;
+            text-align: end;
+        }
+    }
+    .swiper-button-next{
+        right: 16.5vw;
+        bottom: 72px;
+        top: initial;
+        left: auto;
+    }
+    .swiper-button-prev{
+        right: 21vw;
+        bottom: 72px;
+        top: initial;
+        left: auto;
+    }
+    .swiper-button-next:after{
+        content: url(../img/flecha-next.svg);
+    }
+    .swiper-button-prev:after{
+        content: url(../img/flecha-prev.svg);
+    }
+}
+
+section.call.interna{
+    h3{
+        font-weight: 800;
+        padding: 195px;
+    }
+}
+
+section.contactoInterna{
+    padding: 100px 0;
+    .container{
+        display: flex;
+    }
+    .part1{
+        width: 50%;
+        position: relative;
+        img{
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+        }
+    }
+    .part2{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        .formulario{
+            padding: 60px 30px;
+            background: linear-gradient(180deg, #858585 0%, #565658 100%);
+            border-radius: 20px;
+            max-width: 515px;
+            h3{
+                font-family: 'Raleway';
+                font-weight: 800;
+                font-size: 25px;
+                color: #fff;
+                text-align: center;
+            }
+            form{
+                margin-top: 30px;
+                fieldset {
+                    border: none;
+                }
+                input,select
+                {
+                    -webkit-appearance: none;
+                    border: none;
+                    width: 100%;
+                    padding: 15px 25px;
+                    font-family: var(--fuente-Open);
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: var(--color-gris);
+                    border-radius: 31px;
+                }
+                .form-group{
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+                .form-colum{
+                    display: flex;
+                    grid-gap: 15px;
+                    justify-content: space-between;
+                }
+                // select{
+                //     position: relative;
+                //     &::after{
+                //         content: url(../img/flacha-gris.svg);
+                //         position: absolute;
+                //         top: 50%;
+                //         right: 15px;
+                //         width: 23px;
+                //         height: 23px;
+                //     }
+                // }
+                .enviar{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                    button{
+                        background: linear-gradient(180deg, #FE6D4D 0%, #FE4920 100%);
+                        border-radius: 40px;
+                        font-family: var(--fuente-Raleway);
+                        font-weight: 600;
+                        font-size: 20px;
+                        color: #fff;
+                        padding: 18px 45px;
+                        display: flex;
+                        align-items: center;
+                        border: none;
+                        img{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
