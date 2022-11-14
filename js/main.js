@@ -3,14 +3,24 @@ document.body.addEventListener("mousemove", e => {
     x: e.clientX,
     y: e.clientY,
   })
+  gsap.to(".ht-cursor2", {
+    x: e.clientX,
+    y: e.clientY,
+  })
 })
 
 $(".item-slider2").hover(function () {
-  $(".ht-cursor").addClass("mostrar");
+    $(".ht-cursor").addClass("mostrar");
+  }, function () {
+    $(".ht-cursor").removeClass("mostrar");
+});
+
+
+$(".call").hover(function () {
+  $(".ht-cursor2").addClass("mostrar");
 }, function () {
-  $(".ht-cursor").removeClass("mostrar");
-}
-);
+  $(".ht-cursor2").removeClass("mostrar");
+});
 
 
 MyApp = {
@@ -49,18 +59,20 @@ MyApp = {
         scrollbar: {
           el: '.swiper-scrollbar',
         },
-        autoplay: {
-          delay: 6000,
-        },
+        // autoplay: {
+        //   delay: 6000,
+        // },
       });
     }
   },
   swiper2: {
     init: function () {
       var swiper2 = new Swiper(".swiper2", {
-        slidesPerView: 3,
+        // slidesPerView: 3,
+        // spaceBetween: 85,
+        // centeredSlides: true,
+        slidesPerView: "auto",
         spaceBetween: 85,
-        centeredSlides: true,
       });
     }
   },
@@ -107,6 +119,20 @@ MyApp = {
         })
     })
     }
+  },
+  sliderProyecto:{
+    init: function () {
+      var swiper = new Swiper(".slider-proyecto", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    }
   }
 }
 
@@ -128,6 +154,10 @@ if ($('.contentCategorias').length > 0) {
 
 if ($('.popup.inicio').length > 0) {
   MyApp.popupInicio.init();
+}
+
+if ($('.slider-proyecto').length > 0) {
+  MyApp.sliderProyecto.init();
 }
 
 
