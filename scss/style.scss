@@ -15,12 +15,66 @@
     --color-gris: #565658;
 }
 
+
 body{
-    border: 6px solid var(--color-anaranjado);
+    // border: 6px solid var(--color-anaranjado);
+    position: relative;
     transition: 0.2s linear;
 }
-body.resaltar{
-    border: 10px solid var(--color-anaranjado);
+// body.resaltar{
+//     border: 10px solid var(--color-anaranjado);
+// }
+
+.linea{
+    transition: 0.2s linear;
+}
+
+.linea1{
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-anaranjado);
+    z-index: 11;
+}
+
+.linea2{
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: var(--color-anaranjado);
+    z-index: 11;
+}
+.linea3{
+    position: fixed;
+    width: 100%;
+    height: 6px;
+    top: 0;
+    left: 0;
+    background-color: var(--color-anaranjado);
+    z-index: 11;
+}
+.linea4{
+    position: fixed;
+    width: 100%;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-anaranjado);
+    z-index: 11;
+}
+
+.linea1.resaltar,
+.linea2.resaltar{
+    width: 10px;
+}
+
+.linea3.resaltar,
+.linea4.resaltar{
+    height: 10px;
 }
 
 body.hide-scrolling {
@@ -109,9 +163,9 @@ ul{
 }
 
 header{
-    border-top: 6px solid var(--color-anaranjado);
-    border-left: 6px solid var(--color-anaranjado);
-    border-right: 6px solid var(--color-anaranjado);
+    // border-top: 6px solid var(--color-anaranjado);
+    // border-left: 6px solid var(--color-anaranjado);
+    // border-right: 6px solid var(--color-anaranjado);
     padding: 10px 0;
     background-color: #fff;
     position: fixed;
@@ -178,11 +232,11 @@ header{
     }
 }
 
-header.resaltar{
-    border-top: 10px solid var(--color-anaranjado);
-    border-left: 10px solid var(--color-anaranjado);
-    border-right: 10px solid var(--color-anaranjado);
-}
+// header.resaltar{
+//     border-top: 10px solid var(--color-anaranjado);
+//     border-left: 10px solid var(--color-anaranjado);
+//     border-right: 10px solid var(--color-anaranjado);
+// }
 
 main{
     padding-top: 100px;

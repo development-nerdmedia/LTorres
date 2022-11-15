@@ -15,12 +15,10 @@ document.body.addEventListener("mousemove", e => {
 
 $(".item-slider2").hover(function () {
   $(".ht-cursor").addClass("mostrar");
-  $("body").addClass("resaltar");
-  $("header").addClass("resaltar");
+  $(".linea").addClass("resaltar");
 }, function () {
   $(".ht-cursor").removeClass("mostrar");
-  $("body").removeClass("resaltar");
-  $("header").removeClass("resaltar");
+  $(".linea").removeClass("resaltar");
 });
 
 
