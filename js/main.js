@@ -14,9 +14,13 @@ document.body.addEventListener("mousemove", e => {
 })
 
 $(".item-slider2").hover(function () {
-    $(".ht-cursor").addClass("mostrar");
-  }, function () {
-    $(".ht-cursor").removeClass("mostrar");
+  $(".ht-cursor").addClass("mostrar");
+  $("body").addClass("resaltar");
+  $("header").addClass("resaltar");
+}, function () {
+  $(".ht-cursor").removeClass("mostrar");
+  $("body").removeClass("resaltar");
+  $("header").removeClass("resaltar");
 });
 
 
@@ -32,6 +36,61 @@ $(".call.interna").hover(function () {
   $(".ht-cursor3").removeClass("mostrar");
 });
 
+
+
+/* efecto de desplazamiento de los botones de menú */
+
+const menuItems = document.querySelectorAll(
+  'a[href^="#"]'
+);
+
+function getScrollTopByHref(element) {
+  const id = element.getAttribute("href");
+  return document.querySelector(id).offsetTop;
+}
+
+function scrollToPosition(to) {
+  smoothScrollTo(0, to);
+}
+
+function scrollToIdOnClick(event) {
+  event.preventDefault();
+  const to = getScrollTopByHref(event.currentTarget) - 110;
+  scrollToPosition(to);
+}
+
+menuItems.forEach((item) => {
+  item.addEventListener("click", scrollToIdOnClick);
+});
+function smoothScrollTo(endX, endY, duration) {
+  const startX = window.scrollX || window.pageXOffset;
+  const startY = window.scrollY || window.pageYOffset;
+  const distanceX = endX - startX;
+  const distanceY = endY - startY;
+  const startTime = new Date().getTime();
+
+  duration = typeof duration !== "undefined" ? duration : 600;
+
+  const easeInOutQuart = (time, from, distance, duration) => {
+      if ((time /= duration / 2) < 1)
+          return (distance / 2) * time * time * time * time + from;
+      return (
+          (-distance / 2) * ((time -= 2) * time * time * time - 2) + from
+      );
+  };
+
+  const timer = setInterval(() => {
+      const time = new Date().getTime() - startTime;
+      const newX = easeInOutQuart(time, startX, distanceX, duration);
+      const newY = easeInOutQuart(time, startY, distanceY, duration);
+      if (time >= duration) {
+          clearInterval(timer);
+      }
+      window.scroll(newX, newY);
+  }, 1000 / 60); // 60 fps
+}
+
+/* END efecto de desplazamiento de los botones de menú */
 
 MyApp = {
   popupInicio: {
@@ -117,20 +176,20 @@ MyApp = {
 
       enlaces.forEach((elemento) => {
         elemento.addEventListener('click', (evento) => {
-            evento.preventDefault();
-            enlaces.forEach((enlace) => enlace.classList.remove('select'));
-            evento.target.classList.add('select');
-            var categoria = evento.target.innerHTML;
-            $(`.item-slider2`).not(`[data-category="${categoria}"]`).hide();
-            $(`.item-slider2[data-category="${categoria}"]`).show();
-            if (categoria === "Todos") {
-                $(`.item-slider2`).show();
-            }
+          evento.preventDefault();
+          enlaces.forEach((enlace) => enlace.classList.remove('select'));
+          evento.target.classList.add('select');
+          var categoria = evento.target.innerHTML;
+          $(`.item-slider2`).not(`[data-category="${categoria}"]`).hide();
+          $(`.item-slider2[data-category="${categoria}"]`).show();
+          if (categoria === "Todos") {
+            $(`.item-slider2`).show();
+          }
         })
-    })
+      })
     }
   },
-  sliderProyecto:{
+  sliderProyecto: {
     init: function () {
       var swiper = new Swiper(".slider-proyecto", {
         noSwiping: true,
@@ -145,6 +204,93 @@ MyApp = {
         },
       });
     }
+  },
+  contador: {
+    init: function () {
+
+      // function Contador() {
+        /* Nuevo metodo unitario */
+        const numero = document.querySelectorAll(".contadorsec .contadores .contador h4")
+        const meta = document.querySelectorAll(".contadorsec .contadores .contador span.meta")
+        const numbermeta = parseInt(meta[0].textContent)
+        let cantidad = 0;
+
+        let tiempo = setInterval(() => {
+          cantidad += 1
+          numero[0].textContent = cantidad
+
+          if (cantidad === numbermeta) {
+            clearInterval(tiempo)
+          }
+        }, 60);
+
+        const numbermeta2 = parseInt(meta[1].textContent)
+        let cantidad2 = 0;
+
+        let tiempo2 = setInterval(() => {
+          cantidad2 += 1
+          numero[1].textContent = cantidad2
+
+          if (cantidad2 === numbermeta2) {
+            clearInterval(tiempo2)
+          }
+        }, 30);
+
+
+        const numbermeta3 = parseInt(meta[2].textContent)
+        let cantidad3 = 0;
+
+        let tiempo3 = setInterval(() => {
+          cantidad3 += 1
+          numero[2].textContent = cantidad3
+
+          if (cantidad3 === numbermeta3) {
+            clearInterval(tiempo3)
+          }
+        }, 38);
+      // }
+
+
+
+      // window.addEventListener("scroll", () => {
+      //   let windowBottom = window.pageYOffset + window.innerHeight;
+      //   const contenedor = document.querySelector(".contadorsec")
+      //   // document.querySelectorAll(".contadorsec").forEach(el => {
+      //     let objectBottom = contenedor.offsetTop + contenedor.offsetHeight;
+      //     if (objectBottom < windowBottom) {
+      //       Contador();
+      //     }
+      //   // });
+      // })
+
+      /* Con un for */
+
+      // const contadores = document.querySelectorAll(".contadorsec .contadores .contador");
+
+      // for (let i = 0; i < contadores.length; i++) {
+      //   var numero = contadores[i].querySelector("h4")
+      //   var meta = parseInt(contadores[i].querySelector("span.meta").textContent)
+      //   let cantidad = 0;
+
+      //   let tiempo = setInterval(() => {
+      //     cantidad+=1
+      //     numero.textContent = cantidad
+
+      //     if (cantidad === meta) {
+      //       clearInterval(tiempo)
+      //     }
+      //   }, 80);
+      // }
+    }
+  },
+  historia:{
+    init: function () {
+      if ($(".lineaContent").length > 0) {
+        $(".lineaContent").stick_in_parent({
+            offset_top: 350,
+        });
+    }
+    }
   }
 }
 
@@ -154,6 +300,10 @@ if ($('.home.swiper').length > 0) {
 
 if ($('.swiper2 ').length > 0) {
   MyApp.swiper2.init();
+}
+
+if ($('.contadorsec').length > 0) {
+  MyApp.contador.init();
 }
 
 if ($('.marquee-with-options').length > 0) {
@@ -170,6 +320,10 @@ if ($('.popup.inicio').length > 0) {
 
 if ($('.slider-proyecto').length > 0) {
   MyApp.sliderProyecto.init();
+}
+
+if ($('.historia').length > 0) {
+  MyApp.historia.init();
 }
 
 
