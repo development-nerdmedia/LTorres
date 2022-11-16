@@ -145,9 +145,9 @@ MyApp = {
         scrollbar: {
           el: '.swiper-scrollbar',
         },
-        // autoplay: {
-        //   delay: 6000,
-        // },
+        autoplay: {
+          delay: 6000,
+        },
       });
     }
   },
