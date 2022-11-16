@@ -423,10 +423,9 @@ MyApp = {
   },
   Gracias:{
     init: function () {
-      console.log("sadas");
       var link = localStorage.getItem("URL");
         $('.thnaks .close').attr("href", link);
-        console.log(link);
+        console.log(localStorage.getItem("URL"));
     }
   }
 }
