@@ -1,3 +1,12 @@
+var data = sessionStorage.getItem('popUp');
+
+if (data === "false") {
+  document.body.classList.remove("hide-scrolling");
+  $(`section.popup`).hide();
+}else{  
+  document.body.classList.add("hide-scrolling");
+}
+
 document.body.addEventListener("mousemove", e => {
   gsap.to(".ht-cursor", {
     x: e.clientX,
@@ -8,6 +17,10 @@ document.body.addEventListener("mousemove", e => {
     y: e.clientY,
   })
   gsap.to(".ht-cursor3", {
+    x: e.clientX,
+    y: e.clientY,
+  })
+  gsap.to(".ht-cursor4", {
     x: e.clientX,
     y: e.clientY,
   })
@@ -32,6 +45,12 @@ $(".call.interna").hover(function () {
   $(".ht-cursor3").addClass("mostrar");
 }, function () {
   $(".ht-cursor3").removeClass("mostrar");
+});
+
+$(".itemNoticia").hover(function () {
+  $(".ht-cursor4").addClass("mostrar");
+}, function () {
+  $(".ht-cursor4").removeClass("mostrar");
 });
 
 
@@ -93,11 +112,11 @@ function smoothScrollTo(endX, endY, duration) {
 MyApp = {
   popupInicio: {
     init: function () {
-      document.body.classList.add("hide-scrolling");
       document.addEventListener("click", (e) => {
         if (e.target.closest(".popup .close")) {
           document.body.classList.remove("hide-scrolling");
           $(`section.popup`).hide();
+          sessionStorage.setItem('popUp', 'false');
         }
       })
     }
@@ -287,7 +306,28 @@ MyApp = {
         $(".lineaContent").stick_in_parent({
             offset_top: 350,
         });
+      }
     }
+  },
+  imgReferidos:{
+    init: function () {
+      if ($(".imgScroll").length > 0) {
+        $(".imgScroll").stick_in_parent({
+            offset_top: 150,
+        });
+      }
+    }
+  },
+  formularioReferidos:{
+    init: function () {
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".labelTerminos")) {
+          document.querySelector(".labelTerminos").classList.toggle("activo");
+        }
+        if (e.target.closest(".labelPoliticas")) {
+          document.querySelector(".labelPoliticas").classList.toggle("activo");
+        }
+      });
     }
   }
 }
@@ -322,6 +362,11 @@ if ($('.slider-proyecto').length > 0) {
 
 if ($('.historia').length > 0) {
   MyApp.historia.init();
+}
+
+if ($('.formularioReferidos').length > 0) {
+  MyApp.imgReferidos.init();
+  MyApp.formularioReferidos.init();
 }
 
 
