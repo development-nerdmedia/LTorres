@@ -1728,8 +1728,18 @@ section.contactoInterna{
             font-size: 18px;
             color: var(--color-gris);
             border-radius: 31px;
+            border: 3px solid transparent;
             &:focus {
                 outline-style: none; }
+        }
+        select{
+            padding-right: 45px;
+        }
+        input.falta,select.falta{
+            border: 3px solid var(--color-anaranjado);
+        }
+        input[type=number]::-webkit-inner-spin-button {
+            display: none;
         }
         .form-group{
             margin-bottom: 20px;
@@ -1768,6 +1778,7 @@ section.contactoInterna{
                 display: flex;
                 align-items: center;
                 border: none;
+                cursor: pointer;
                 img{
                     margin-left: 10px;
                 }
@@ -2047,11 +2058,33 @@ section.formularioReferidos{
                     label{
                         width: 24px;
                         height: 24px;
-                        border: 2px solid #fff;
+                        border: 2px solid var(--color-anaranjado);
                         display: inline-block;
                     }
                     label.activo{
+                        border: 2px solid #fff;
                         background-color: #fff;
+                        position: relative;
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            width: 3px;
+                            height: 15px;
+                            background-color: var(--color-anaranjado);
+                            transform: rotate(30deg);
+                            right: 5px;
+                            top: 1.5px;
+                        }
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            width: 3px;
+                            height: 10px;
+                            background-color: var(--color-anaranjado);
+                            transform: rotate(-30deg);
+                            left: 6px;
+                            bottom: 2px;
+                        }
                     }
                     a{
                         font-family: var(--fuente-Open);
@@ -2296,6 +2329,7 @@ section.contacto{
                 font-weight: 600;
                 font-size: 40px;
                 margin-bottom: 50px;
+                color: var(--color-gris);
                 b{
                     font-weight: 800;
                 }

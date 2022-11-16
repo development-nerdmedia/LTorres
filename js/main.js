@@ -1,10 +1,16 @@
 var data = sessionStorage.getItem('popUp');
-
+var URLactual = window.location;
 if (data === "false") {
   document.body.classList.remove("hide-scrolling");
   $(`section.popup`).hide();
 }else{  
   document.body.classList.add("hide-scrolling");
+}
+
+
+if ($(".popup.inicio").length > 0) {
+}else{
+  document.body.classList.remove("hide-scrolling");
 }
 
 document.body.addEventListener("mousemove", e => {
@@ -329,6 +335,99 @@ MyApp = {
         }
       });
     }
+  },
+  validateForm:{
+    init: function () {
+
+      $(document).on("wheel", "input[type=number]", function (e) { $(this).blur(); });
+
+      var formespacioinput = document.querySelectorAll('.formulario .form-input');
+      var formespacioselect = document.querySelectorAll('.formulario select');
+      var formespaciocheck = document.querySelectorAll(".formulario input[type='checkbox']");
+
+
+      function validateSelect(e) {
+        
+        for (let i = 0; i < formespacioselect.length; i++) {
+          if (formespacioselect[i].classList.contains("default")) {            
+          }else{
+            if (formespacioselect[i].value == "") {
+              formespacioselect[i].classList.add("falta");
+              e.preventDefault();
+            }else{
+              formespacioselect[i].classList.remove("falta");
+            }
+          }
+          
+        }
+      }
+
+      $("#numeroDoc").css('opacity','0.5')
+      $('#numeroDoc').prop('disabled', false);
+      $('#numeroDoc').css('pointer-events', 'none');
+      document.querySelector("#numeroDoc").classList.remove("formSelect");
+      document.querySelector("#numeroDoc").classList.remove("wpcf7-validates-as-required");
+      document.querySelector("#numeroDoc").classList.remove("form-input");
+
+      $("#documento").change(function(){
+        if ($("#documento").val() !== '') {
+          $("#numeroDoc").css('opacity','1');
+          $('#numeroDoc').css('pointer-events', 'auto');
+          document.querySelector("#numeroDoc").classList.add("form-input");
+        }else{
+              $("#numeroDoc").css('opacity','0.5')
+              $('#numeroDoc').prop('disabled', false);
+              $('#numeroDoc').val('');
+              $('#numeroDoc').css('pointer-events', 'none');
+              document.querySelector("#numeroDoc").classList.remove("form-input");
+              document.querySelector("#numeroDoc").classList.remove("falta");
+        }
+      })
+
+      function validateInput(e) {
+        formespacioinput = document.querySelectorAll('.formulario .form-input');
+        for (let y = 0; y < formespacioinput.length; y++) {
+            if (!formespacioinput[y].value) {
+                formespacioinput[y].classList.add("falta");
+                e.preventDefault();
+            } else {
+                formespacioinput[y].classList.remove("falta");
+            }
+        }
+      }
+
+      function validateCheck(e){
+        formespaciocheck = document.querySelectorAll(".formulario input[type='checkbox']");
+        for (let i = 0; i < formespaciocheck.length; i++) {
+          if (formespaciocheck[i].classList.contains("activo")) {            
+            e.preventDefault();
+          }
+        }
+      }
+
+      document.addEventListener("click", (e) => {
+        
+        if (e.target.closest(".formulario form .enviar button")) {
+          localStorage.setItem('URL', URLactual);
+        }
+
+        if (e.target.closest(".formulario form .enviar button[type='submit']")) {
+          validateInput(e);
+          validateSelect(e);
+          if ($(".checkbox-box").length > 0) {
+            validateCheck(e);
+          }
+        }
+      })
+    }
+  },
+  Gracias:{
+    init: function () {
+      console.log("sadas");
+      var link = localStorage.getItem("URL");
+        $('.thnaks .close').attr("href", link);
+        console.log(link);
+    }
   }
 }
 
@@ -367,6 +466,14 @@ if ($('.historia').length > 0) {
 if ($('.formularioReferidos').length > 0) {
   MyApp.imgReferidos.init();
   MyApp.formularioReferidos.init();
+}
+
+if ($('.formulario').length > 0) {
+  MyApp.validateForm.init();
+}
+
+if ($('.thnaks').length > 0) {
+  MyApp.Gracias.init();
 }
 
 

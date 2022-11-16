@@ -1427,9 +1427,16 @@ section.contactoInterna {
       font-weight: 400;
       font-size: 18px;
       color: var(--color-gris);
-      border-radius: 31px; }
+      border-radius: 31px;
+      border: 3px solid transparent; }
       .formulario form input:focus, .formulario form select:focus {
         outline-style: none; }
+    .formulario form select {
+      padding-right: 45px; }
+    .formulario form input.falta, .formulario form select.falta {
+      border: 3px solid var(--color-anaranjado); }
+    .formulario form input[type=number]::-webkit-inner-spin-button {
+      display: none; }
     .formulario form .form-group {
       margin-bottom: 20px;
       width: 100%; }
@@ -1462,7 +1469,8 @@ section.contactoInterna {
         padding: 15px 45px;
         display: flex;
         align-items: center;
-        border: none; }
+        border: none;
+        cursor: pointer; }
         .formulario form .enviar button img {
           margin-left: 10px; }
 
@@ -1682,10 +1690,30 @@ section.formularioReferidos {
         section.formularioReferidos .container .part2 .formulario .checkbox-box label {
           width: 24px;
           height: 24px;
-          border: 2px solid #fff;
+          border: 2px solid var(--color-anaranjado);
           display: inline-block; }
         section.formularioReferidos .container .part2 .formulario .checkbox-box label.activo {
-          background-color: #fff; }
+          border: 2px solid #fff;
+          background-color: #fff;
+          position: relative; }
+          section.formularioReferidos .container .part2 .formulario .checkbox-box label.activo::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background-color: var(--color-anaranjado);
+            transform: rotate(30deg);
+            right: 5px;
+            top: 1.5px; }
+          section.formularioReferidos .container .part2 .formulario .checkbox-box label.activo::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 10px;
+            background-color: var(--color-anaranjado);
+            transform: rotate(-30deg);
+            left: 6px;
+            bottom: 2px; }
         section.formularioReferidos .container .part2 .formulario .checkbox-box a {
           font-family: var(--fuente-Open);
           font-weight: 400;
@@ -1878,7 +1906,8 @@ section.contacto {
         font-family: var(--fuente-Raleway);
         font-weight: 600;
         font-size: 40px;
-        margin-bottom: 50px; }
+        margin-bottom: 50px;
+        color: var(--color-gris); }
         section.contacto .container .part1 h3 b {
           font-weight: 800; }
       section.contacto .container .part1 .datos .itemDatos {
