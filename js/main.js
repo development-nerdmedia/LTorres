@@ -1,17 +1,22 @@
+AOS.init();
 var data = sessionStorage.getItem('popUp');
 var URLactual = window.location;
 if (data === "false") {
   document.body.classList.remove("hide-scrolling");
   $(`section.popup`).hide();
 }else{  
-  document.body.classList.add("hide-scrolling");
+  setTimeout(() => {
+    document.querySelector('.popup').classList.add("mostrarPop");
+    document.body.classList.add("hide-scrolling");
+  }, 2000);
 }
 
-
 if ($(".popup.inicio").length > 0) {
+  document.body.classList.remove("hide-scrolling");
 }else{
   document.body.classList.remove("hide-scrolling");
 }
+
 
 document.body.addEventListener("mousemove", e => {
   gsap.to(".ht-cursor", {
