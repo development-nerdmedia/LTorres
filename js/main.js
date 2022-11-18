@@ -171,10 +171,10 @@ MyApp = {
         slidesPerView: 'auto',
         // slidesPerView: 3,
         spaceBetween: 85,
-  //       freeMode: {
-  //   enabled: true,
-  //   sticky: true,
-  // },
+        freeMode: {
+          enabled: true,
+          // sticky: true,
+        },
         breakpoints: {
           '1441':{
             slidesPerView: 'auto',
