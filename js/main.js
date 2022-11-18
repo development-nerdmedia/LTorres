@@ -156,20 +156,37 @@ MyApp = {
         scrollbar: {
           el: '.swiper-scrollbar',
         },
-        autoplay: {
-          delay: 6000,
-        },
+        // autoplay: {
+        //   delay: 6000,
+        // },
       });
     }
   },
   swiper2: {
     init: function () {
       var swiper2 = new Swiper(".swiper2", {
-        // slidesPerView: 3,
+        // slidesPerView: 2,
         // spaceBetween: 85,
         // centeredSlides: true,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',
+        // slidesPerView: 3,
         spaceBetween: 85,
+  //       freeMode: {
+  //   enabled: true,
+  //   sticky: true,
+  // },
+        breakpoints: {
+          '1441':{
+            slidesPerView: 'auto',
+          },
+          '1440':{
+            // spaceBetween: 97,
+            slidesPerView: 2.3,
+          },
+          '1280':{
+            // slidesPerView: 2.3,
+          },
+        },
       });
     }
   },
@@ -432,7 +449,40 @@ MyApp = {
         $('.thnaks .close').attr("href", link);
         console.log(localStorage.getItem("URL"));
     }
+  },
+  videoPortada:{
+    init: function () {
+      function mostratVideo(e) {
+        var nameURL = e.target.parentElement.parentElement.querySelector(".urlvieo p").textContent;
+        Swal.fire({
+            showCloseButton: true,
+            html:
+                '<div class="video1-modal-content">' +
+                '<div class="video1-modal-content__mask">' +
+                '<div class="video1-modal-content__video-wrapper">' +
+                '<div style="padding:56.25% 0 0 0;position:relative;">' +
+                `<iframe src="${nameURL}" title="YouTube video player" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>` +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+        })
+      }
+
+      document.addEventListener("click", function (e) {
+        if (e.target.closest(".videoPortada")) {
+          mostratVideo(e)
+        }
+      })
+
+    }
+    
+
   }
+}
+
+if ($('.videoPortada').length > 0) {
+  MyApp.videoPortada.init();
 }
 
 if ($('.home.swiper').length > 0) {
