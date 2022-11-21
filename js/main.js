@@ -46,6 +46,13 @@ $(".item-slider2").hover(function () {
 });
 
 
+$(".itemNoticia").hover(function () {
+  $(".linea").addClass("resaltar");
+}, function () {
+  $(".linea").removeClass("resaltar");
+});
+
+
 $(".call").hover(function () {
   $(".ht-cursor2").addClass("mostrar");
 }, function () {
@@ -63,6 +70,30 @@ $(".itemNoticia").hover(function () {
 }, function () {
   $(".ht-cursor4").removeClass("mostrar");
 });
+
+
+document.addEventListener("click", function (e) {
+  var formespacioselect = document.querySelectorAll('.formulario form select');
+  if (e.target.closest(".formulario form select")) {
+    formespacioselect.forEach(function (shinyItem2) {
+        shinyItem2.parentElement.classList.remove("active");
+    })
+    e.target.parentElement.classList.add("active");
+  } else {
+    formespacioselect.forEach(function (shinyItem2) {
+        shinyItem2.parentElement.classList.remove("active");
+    });
+  }
+
+  if (e.target.closest("section.bannerInterna .part2 a.categoria")) {
+    const titleProyect = e.target.getAttribute('data-category');
+    localStorage.setItem('CatNovedad', `${titleProyect}`);
+  }
+
+  if (e.target.closest("li a")) {
+    localStorage.setItem('CatNovedad', "none");
+  }
+})
 
 
 
@@ -156,10 +187,30 @@ MyApp = {
         scrollbar: {
           el: '.swiper-scrollbar',
         },
-        // autoplay: {
-        //   delay: 6000,
-        // },
+        autoplay: {
+          delay: 6000,
+        },
       });
+
+
+      const categoriaHome = document.querySelectorAll("section.home .item-slider .adelante .info .ubicacion")
+      const tituloHome = document.querySelectorAll("section.home .item-slider .adelante .info h2");
+      const buttonHome = document.querySelectorAll("section.home .item-slider .adelante .info a");
+      setTimeout(() => {
+        for (let i = 0; i < categoriaHome.length; i++) {
+          categoriaHome[i].classList.add('aos-init');
+          categoriaHome[i].classList.add('aos-animate');
+        }
+        for (let i = 0; i < tituloHome.length; i++) {
+          tituloHome[i].classList.add('aos-init');
+          tituloHome[i].classList.add('aos-animate');
+        }
+        for (let i = 0; i < buttonHome.length; i++) {
+          buttonHome[i].classList.add('aos-init');
+          buttonHome[i].classList.add('aos-animate');
+        }
+      }, 3000);
+
     }
   },
   swiper2: {
@@ -178,13 +229,19 @@ MyApp = {
         breakpoints: {
           '1441':{
             slidesPerView: 'auto',
+            spaceBetween: 70,
           },
-          '1440':{
-            // spaceBetween: 97,
-            slidesPerView: 2.3,
+          '1281':{
+            spaceBetween: 70,
           },
-          '1280':{
-            // slidesPerView: 2.3,
+          '1080':{
+            spaceBetween: 70,
+          },
+          '921':{
+            spaceBetween: 40,
+          },
+          '769':{
+            spaceBetween: 60,
           },
         },
       });
@@ -203,22 +260,44 @@ MyApp = {
   },
   contentCategorias: {
     init: function () {
-      document.querySelector("#categorias li").classList.add("select");
+
+      var categoriaNovedad = localStorage.getItem("CatNovedad");
+      if (categoriaNovedad == "none") {
+        document.querySelector("#categorias li").classList.add("select");
+      }
+      
       let listaTitle = [];
       const enlaces = document.querySelectorAll('#categorias li');
       for (let i = 0; i < enlaces.length; i++) {
         textoitem = enlaces[i].textContent;
         listaTitle.push(textoitem);
+        console.log(listaTitle);
+        console.log(categoriaNovedad);
+      }
+
+      if (listaTitle.includes(categoriaNovedad)) {
+        console.log("esta");
+        for (let y = 0; y < enlaces.length; y++) {
+            if (categoriaNovedad === enlaces[y].textContent) {
+                document.querySelector("#categorias li").classList.remove("select");
+                enlaces[y].classList.add('select')
+            }
+        }
       }
 
       $('.item-slider2').hide();
-      const categoryMain = document.querySelector('#categorias li.select').innerHTML;
+
+      var categoryMain = document.querySelector('#categorias li.select').innerHTML;      
+
+      // categoryMain = localStorage.getItem("CatNovedad");
+      // console.log(categoryMain);
+
       if (categoryMain === "Todos") {
         $(`.item-slider2`).show(0);
       } else {
-        $(`.item-slider2[data-category="${categoryMain}"]`).show(0);
+        $(`.item-slider2[data-category="${categoryMain}"]`).show();
       }
-
+      
       enlaces.forEach((elemento) => {
         elemento.addEventListener('click', (evento) => {
           evento.preventDefault();
@@ -239,6 +318,10 @@ MyApp = {
       var swiper = new Swiper(".slider-proyecto", {
         noSwiping: true,
         noSwipingClass: 'item-slider-proyecto',
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",

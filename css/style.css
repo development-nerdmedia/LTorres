@@ -183,6 +183,7 @@ ul {
 
 header {
   padding: 10px 0;
+  padding-top: 20px;
   background-color: #fff;
   position: fixed;
   left: 0;
@@ -219,19 +220,21 @@ header {
         left: 50%;
         transform: translate(-50%, 0);
         background-color: var(--color-anaranjado); }
-    header nav .navigation ul li:last-child {
+    header nav .navigation ul li.menu-mobile {
+      display: none; }
+    header nav .navigation ul li.contacto {
       padding-right: 0; }
-      header nav .navigation ul li:last-child a {
-        padding: 7px 45px 7px 15px;
+      header nav .navigation ul li.contacto a {
+        padding: 15px 45px 15px 20px;
         background: linear-gradient(180deg, #FE6D4D 0%, #FE4920 100%);
         border-radius: 40px;
-        color: transparent;
+        color: #fff;
         display: flex;
         align-items: center;
         position: relative; }
-        header nav .navigation ul li:last-child a img {
+        header nav .navigation ul li.contacto a img {
           margin-left: 8px; }
-        header nav .navigation ul li:last-child a div {
+        header nav .navigation ul li.contacto a div {
           position: absolute;
           top: 50%;
           transition: width .33s ease,transform .33s ease;
@@ -243,87 +246,34 @@ header {
           width: 20px;
           height: 20px;
           transition: .33s ease; }
-          header nav .navigation ul li:last-child a div svg {
+          header nav .navigation ul li.contacto a div svg {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); }
-            header nav .navigation ul li:last-child a div svg .arrow-tip {
+            header nav .navigation ul li.contacto a div svg .arrow-tip {
               transform: translateX(-2px);
               transition: transform .33s ease;
               color: #fff; }
-            header nav .navigation ul li:last-child a div svg .arrow-line {
+            header nav .navigation ul li.contacto a div svg .arrow-line {
               transform: translateX(-4px) scaleX(0);
               transform-origin: right center;
               transition: transform .33s ease;
               color: #fff; }
-        header nav .navigation ul li:last-child a:hover .arrow-icon {
+        header nav .navigation ul li.contacto a:hover .arrow-icon {
           width: 28px;
           transform: translate(10px, -50%);
           background-color: #fff; }
-        header nav .navigation ul li:last-child a:hover .arrow-tip {
+        header nav .navigation ul li.contacto a:hover .arrow-tip {
           transform: translateX(0);
           color: var(--color-anaranjado) !important; }
-        header nav .navigation ul li:last-child a:hover .arrow-line {
+        header nav .navigation ul li.contacto a:hover .arrow-line {
           transform: translateX(0) scaleX(1);
           color: var(--color-anaranjado) !important; }
 
-header .btn-66,
-header .btn-66 *,
-header .btn-66 :after,
-header .btn-66 :before,
-header .btn-66:after,
-header .btn-66:before {
-  border: 0 solid;
-  box-sizing: border-box; }
-
-header .btn-66 {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  background-color: transparent;
-  background-image: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 100%;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-  padding: 0; }
-
-header .btn-66:disabled {
-  cursor: default; }
-
-header .btn-66:-moz-focusring {
-  outline: auto; }
-
-header .btn-66 svg {
-  display: block;
-  vertical-align: middle; }
-
-header .btn-66 [hidden] {
-  display: none; }
-
-header .btn-66 {
-  --height: 40px;
-  --progress: 0px;
-  border-radius: 999px;
-  box-sizing: border-box;
-  color: transparent;
-  display: block;
-  font-weight: 900;
-  line-height: var(--height);
-  overflow: hidden;
-  padding: 0 60px;
-  position: relative;
-  text-shadow: 0 calc(var(--progress) * -1) #fff, 0 calc(var(--height) - var(--progress)) #fff;
-  transition: 0.5s; }
-
-header .btn-66:hover {
-  --progress: var(--height); }
-
 main {
-  padding-top: 100px; }
+  padding-top: 100px;
+  overflow: hidden; }
 
 section.popup {
   position: fixed;
@@ -556,6 +506,7 @@ section.home {
     position: absolute;
     bottom: 100px;
     left: 320px;
+    left: 16.7vw;
     animation-duration: 2s;
     animation-name: flechaFlotante;
     animation-iteration-count: infinite;
@@ -591,7 +542,7 @@ section.home {
       font-size: 20px;
       font-family: var(--fuente-Open); }
     section.home .proximo .animationPass {
-      margin-left: 13px; }
+      margin-left: 20px; }
       section.home .proximo .animationPass .loader {
         width: 20px;
         height: 20px;
@@ -1092,7 +1043,7 @@ footer {
               width: 40px;
               border-radius: 9999px;
               opacity: 1;
-              background-color: var(--color-gris);
+              background-color: var(--color-anaranjado);
               opacity: 0;
               position: absolute;
               top: 50%;
@@ -1128,6 +1079,18 @@ footer {
         color: var(--color-gris); }
         footer .footer2 .part2 p span {
           font-weight: 700; }
+      footer .footer2 .part2 .container .part2-1 {
+        display: flex;
+        padding-right: 40px; }
+        footer .footer2 .part2 .container .part2-1 p {
+          margin-left: 10px; }
+        footer .footer2 .part2 .container .part2-1 span {
+          font-family: var(--fuente-Open);
+          font-weight: 700;
+          font-size: 20px;
+          color: var(--color-gris); }
+      footer .footer2 .part2 .container .part2-2 {
+        padding-left: 40px; }
     footer .footer2 .pie .container {
       display: flex;
       justify-content: space-between;
@@ -1198,13 +1161,18 @@ section.proyectos {
     display: inline-block;
     border-radius: 40px;
     margin: 0 7.5px;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: 0.2s linear; }
+    section.proyectos .contentCategorias ul li:hover {
+      background-color: var(--color-gris);
+      color: #fff; }
   section.proyectos .contentCategorias ul li:first-child {
     margin-left: 0; }
   section.proyectos .contentCategorias ul li:last-child {
     margin-right: 0; }
   section.proyectos .contentCategorias ul li.select {
-    background-color: var(--color-gris); }
+    background-color: var(--color-gris);
+    color: #fff; }
   section.proyectos .contentProyectos {
     margin-top: 100px;
     display: grid;
@@ -1282,64 +1250,6 @@ section.proyectos {
             font-size: 40px;
             line-height: 40px; }
 
-.contentCategorias .btn-66,
-.contentCategorias .btn-66 *,
-.contentCategorias .btn-66 :after,
-.contentCategorias .btn-66 :before,
-.contentCategorias .btn-66:after,
-.contentCategorias .btn-66:before {
-  border: 0 solid;
-  box-sizing: border-box; }
-
-.contentCategorias .btn-66 {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  background-color: transparent;
-  background-image: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 100%;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-  padding: 0; }
-
-.contentCategorias .btn-66:disabled {
-  cursor: default; }
-
-.contentCategorias .btn-66:-moz-focusring {
-  outline: auto; }
-
-.contentCategorias .btn-66 svg {
-  display: block;
-  vertical-align: middle; }
-
-.contentCategorias .btn-66 [hidden] {
-  display: none; }
-
-.contentCategorias .btn-66 {
-  --height: 40px;
-  --progress: 0px;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  box-sizing: border-box;
-  color: transparent;
-  display: block;
-  font-weight: 900;
-  line-height: var(--height);
-  overflow: hidden;
-  padding: 0 60px;
-  position: relative;
-  text-shadow: 0 calc(var(--progress) * -1) var(--color-gris), 0 calc(var(--height) - var(--progress)) var(--color-gris);
-  transition: 0.2s; }
-
-.contentCategorias .btn-66:hover {
-  --progress: var(--height); }
-
-section.proyectos .contentCategorias ul li.btn-66.select {
-  text-shadow: 0 calc(var(--progress) * -1) #fff, 0 calc(var(--height) - var(--progress)) #fff; }
-
 section.bannerInterna {
   padding: 100px 0; }
   section.bannerInterna .container {
@@ -1403,7 +1313,7 @@ section.bannerInterna {
       font-weight: 800;
       font-size: 50px;
       color: var(--color-gris);
-      margin: 30px 0; }
+      margin: 20px 0; }
     section.bannerInterna .part1 p {
       font-family: var(--fuente-Raleway);
       font-weight: 800;
@@ -1413,14 +1323,19 @@ section.bannerInterna {
     display: flex;
     flex-direction: column;
     align-items: flex-end; }
-    section.bannerInterna .part2 span {
+    section.bannerInterna .part2 a.categoria {
+      text-decoration: none;
       font-family: var(--fuente-Raleway);
       font-weight: 800;
       font-size: 25px;
       color: var(--color-anaranjado);
       padding: 15px 30px;
       border-radius: 40px;
-      border: 2px solid var(--color-anaranjado); }
+      border: 2px solid var(--color-anaranjado);
+      transition: 0.2s linear; }
+      section.bannerInterna .part2 a.categoria:hover {
+        color: #fff;
+        background-color: var(--color-anaranjado); }
     section.bannerInterna .part2 .compartir {
       display: flex;
       align-items: center;
@@ -1592,12 +1507,17 @@ section.beneficiosInterna {
     section.beneficiosInterna .beneficiosContainer .itemBeneficio {
       display: flex;
       align-items: center; }
+      section.beneficiosInterna .beneficiosContainer .itemBeneficio img {
+        max-width: 107px;
+        transition: 0.2s linear; }
       section.beneficiosInterna .beneficiosContainer .itemBeneficio p {
         font-family: var(--fuente-Open);
         font-weight: 400;
         font-size: 18px;
         color: #FFFFFF;
         padding-left: 25px; }
+      section.beneficiosInterna .beneficiosContainer .itemBeneficio:hover img {
+        transform: translateY(-10px); }
 
 section.maps {
   padding: 100px 0; }
@@ -1640,7 +1560,8 @@ section.maps {
       border-radius: 40px 0 0 40px;
       background: linear-gradient(0deg, #565658 3.17%, #858585 96.84%); }
       section.maps .map a img {
-        margin-right: 10px; }
+        margin-right: 10px;
+        width: 25px; }
     section.maps .map a:nth-child(3) {
       bottom: 80px; }
     section.maps .map a:nth-child(2) {
@@ -1667,13 +1588,16 @@ section.maps {
         align-items: center; }
         section.maps .lugaresCercanos .lugaresContainer .itemLugar img {
           margin-bottom: 30px;
-          max-width: 107px; }
+          max-width: 107px;
+          transition: 0.2s linear; }
         section.maps .lugaresCercanos .lugaresContainer .itemLugar p {
           font-family: var(--fuente-Open);
           font-weight: 400;
           font-size: 18px;
           color: var(--color-gris);
           text-align: center; }
+        section.maps .lugaresCercanos .lugaresContainer .itemLugar:hover img {
+          transform: translateY(-10px); }
 
 section.slider-proyecto {
   overflow: hidden;
@@ -1726,8 +1650,12 @@ section.slider-proyecto {
     left: auto; }
   section.slider-proyecto .swiper-button-next:after {
     content: url(../img/flecha-next.svg); }
+  section.slider-proyecto .swiper-button-next:hover::after {
+    content: url(../img/flecha-next-hover.svg); }
   section.slider-proyecto .swiper-button-prev:after {
     content: url(../img/flecha-prev.svg); }
+  section.slider-proyecto .swiper-button-prev:hover:after {
+    content: url(../img/flecha-prev-hover.svg); }
 
 section.call.interna h3 {
   font-weight: 800;
@@ -1813,7 +1741,7 @@ section.contactoInterna {
       justify-content: space-between; }
     .formulario form .form-group.select {
       position: relative; }
-      .formulario form .form-group.select::after {
+      .formulario form .form-group.select span::after {
         content: url(../img/flacha-gris.svg);
         position: absolute;
         top: 50%;
@@ -1822,6 +1750,8 @@ section.contactoInterna {
         height: 23px;
         transform: translateY(-50%);
         pointer-events: none; }
+      .formulario form .form-group.select span.active::after {
+        transform: translateY(-50%) rotate(180deg); }
     .formulario form .enviar {
       display: flex;
       justify-content: center;
@@ -1830,16 +1760,15 @@ section.contactoInterna {
         background: linear-gradient(180deg, #FE6D4D 0%, #FE4920 100%);
         border-radius: 40px;
         font-family: var(--fuente-Raleway);
-        font-weight: 600;
+        font-weight: 800;
         font-size: 20px;
         color: #fff;
-        padding: 15px 45px;
+        padding: 15px 45px 15px 20px;
         display: flex;
         align-items: center;
         border: none;
         cursor: pointer;
-        position: relative;
-        padding-right: 78px; }
+        position: relative; }
         .formulario form .enviar button img {
           margin-left: 10px; }
         .formulario form .enviar button div {
@@ -1847,7 +1776,7 @@ section.contactoInterna {
           top: 50%;
           transition: width .33s ease,transform .33s ease;
           transform: translateY(-50%);
-          right: 48px;
+          right: 20px;
           background-color: transparent;
           border: 2px solid #fff;
           border-radius: 22px;
@@ -1890,13 +1819,13 @@ section.nosotros .content {
       font-family: var(--fuente-Raleway);
       font-weight: 800;
       font-size: 25px;
-      margin-bottom: 30px; }
+      margin-bottom: 20px; }
     section.nosotros .content .part1 h1 {
       font-family: var(--fuente-Raleway);
       font-weight: 600;
       font-size: 50px;
       color: var(--color-gris);
-      margin-bottom: 50px; }
+      margin-bottom: 30px; }
       section.nosotros .content .part1 h1 b {
         font-weight: 800; }
     section.nosotros .content .part1 p {
@@ -1964,7 +1893,7 @@ section.misionVisio {
     grid-gap: 30px;
     margin-top: 50px; }
     .elementos .elementosContent .itemElemento {
-      padding: 50px 45px;
+      padding: 30px;
       background: #FFFFFF;
       border-radius: 20px;
       display: flex;
@@ -1977,6 +1906,11 @@ section.misionVisio {
         font-size: 25px;
         color: var(--color-gris);
         text-align: center; }
+      .elementos .elementosContent .itemElemento img {
+        max-width: 100px;
+        transition: 0.2s linear; }
+      .elementos .elementosContent .itemElemento:hover img {
+        transform: translateY(-10px); }
 
 section.historia {
   padding: 100px 0;
@@ -2094,8 +2028,8 @@ section.formularioReferidos {
           -webkit-appearance: auto;
           width: 0; }
         section.formularioReferidos .container .part2 .formulario .checkbox-box label {
-          width: 24px;
-          height: 24px;
+          width: 20px;
+          height: 20px;
           border: 2px solid var(--color-anaranjado);
           display: inline-block; }
         section.formularioReferidos .container .part2 .formulario .checkbox-box label.activo {
@@ -2106,20 +2040,22 @@ section.formularioReferidos {
             content: '';
             position: absolute;
             width: 3px;
-            height: 15px;
+            height: 14px;
             background-color: var(--color-anaranjado);
             transform: rotate(30deg);
-            right: 5px;
-            top: 1.5px; }
+            right: 4.5px;
+            top: 1px;
+            border-radius: 10px; }
           section.formularioReferidos .container .part2 .formulario .checkbox-box label.activo::before {
             content: '';
             position: absolute;
             width: 3px;
-            height: 10px;
+            height: 8px;
             background-color: var(--color-anaranjado);
             transform: rotate(-30deg);
-            left: 6px;
-            bottom: 2px; }
+            left: 4px;
+            bottom: 1px;
+            border-radius: 10px; }
         section.formularioReferidos .container .part2 .formulario .checkbox-box a {
           font-family: var(--fuente-Open);
           font-weight: 400;
@@ -2226,7 +2162,7 @@ section.noticias {
   width: 100%;
   border-radius: 20px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  margin-bottom: 30px; }
+  margin-bottom: 20px; }
 
 .itemNoticia span {
   font-size: 18px;
@@ -2238,7 +2174,7 @@ section.noticias {
   font-weight: 800;
   font-size: 25px;
   color: var(--color-gris);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-top: 15px; }
 
 .itemNoticia p {
@@ -2337,9 +2273,39 @@ section.noticias {
         display: flex;
         align-items: center; }
         .articuloContent .cabecera .part2 .compartir .redes {
-          margin-left: 15px;
+          margin-left: 20px;
           display: flex;
-          grid-gap: 20px; }
+          grid-gap: 25px;
+          align-items: center; }
+          .articuloContent .cabecera .part2 .compartir .redes a {
+            display: flex;
+            position: relative; }
+            .articuloContent .cabecera .part2 .compartir .redes a svg path {
+              transition: 0.5s linear; }
+            .articuloContent .cabecera .part2 .compartir .redes a::before {
+              content: "";
+              height: 40px;
+              width: 40px;
+              border-radius: 9999px;
+              opacity: 1;
+              background-color: var(--color-anaranjado);
+              opacity: 0;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%) translateY(-50%);
+              transform: translate(-50%) translateY(-50%) scale(0);
+              transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
+              transform-origin: center; }
+            .articuloContent .cabecera .part2 .compartir .redes a:hover:before {
+              opacity: 1;
+              transform: translate(-50%) translateY(-50%) scale(1); }
+            .articuloContent .cabecera .part2 .compartir .redes a:hover svg path {
+              fill: #fff !important; }
+            .articuloContent .cabecera .part2 .compartir .redes a svg {
+              position: relative;
+              z-index: 2;
+              height: 25px; }
           .articuloContent .cabecera .part2 .compartir .redes img {
             width: 36.48px; }
   .articuloContent .textContent img {
@@ -2551,13 +2517,45 @@ section.thnaks {
 .swal2-actions {
   display: none !important; }
 
+@media (max-width: 1870px) {
+  section.home .flecha {
+    left: 15.5vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 15.5vw; } }
+
+@media (max-width: 1800px) {
+  section.home .flecha {
+    left: 14vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 14vw; } }
+
+@media (max-width: 1700px) {
+  section.home .flecha {
+    left: 12.2vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 12.2vw; } }
+
+@media (max-width: 1600px) {
+  section.home .flecha {
+    left: 9.5vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 9.5vw; } }
+
+@media (max-width: 1500px) {
+  section.home .flecha {
+    left: 7vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 7vw; } }
+
 @media (max-width: 1440px) {
+  section.home .proximo {
+    padding-right: 70px; }
   .container {
     max-width: 1224px; }
   section.home .flecha {
-    left: 110px; }
+    left: 7.4vw; }
   section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
-    margin-left: 110px; }
+    margin-left: 7.4vw; }
   section.beneficios img.pareja {
     height: 700px;
     left: -268px; }
@@ -2600,7 +2598,29 @@ section.thnaks {
   section.mapaUbicacion iframe {
     height: 400px !important; } }
 
+@media (max-width: 1400px) {
+  section.home .flecha {
+    left: 6vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 6vw; } }
+
+@media (max-width: 1400px) {
+  section.home .flecha {
+    left: 5vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 5vw; } }
+
+@media (max-width: 1340px) {
+  section.slider-2 .item-slider2 {
+    width: 40.3vw; } }
+
 @media (max-width: 1280px) {
+  section.home .proximo {
+    padding: 15px 30px; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 9vw; }
+  section.home .flecha {
+    left: 9vw; }
   section.home .item-slider .adelante .info h2 {
     font-size: 45px;
     max-width: 490px; }
@@ -2611,4 +2631,299 @@ section.thnaks {
     max-width: 1056px; }
   section.home .flecha,
   section.home .proximo {
-    bottom: 60px; } }
+    bottom: 60px; }
+  section.slider-2 .top h3,
+  section.contadorsec .top h3 {
+    font-size: 35px;
+    max-width: 680px; }
+  section.slider-2 .item-slider2 {
+    width: 517px;
+    width: 40vw; }
+  section.contadorsec .contadores .contador {
+    flex-direction: column;
+    align-items: flex-start; }
+  section.contadorsec .contadores .contador .info {
+    margin-top: 20px;
+    margin-left: 0; }
+  section.contadorsec .contadores {
+    grid-gap: 127px; }
+  section.beneficios img.pareja {
+    height: 607px;
+    left: -247px; }
+  section.beneficios .container .part2 h3,
+  section.beneficios .hei2 h3,
+  section.call h3 {
+    font-size: 35px; }
+  section.beneficios .container .part2 ul li {
+    margin: 30px 0; }
+  section.beneficios .container .part2 ul li:first-child {
+    margin-top: 0; }
+  section.beneficios .container .part2 ul li:last-child {
+    margin-bottom: 0; }
+  section.beneficios .container .part2 .animacion {
+    bottom: -36px;
+    right: 109px;
+    width: 207px; }
+  section.beneficios .hei2 .icons img {
+    max-width: 324px; } }
+
+@media (max-width: 1170px) {
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 5vw; }
+  section.home .flecha {
+    left: 5vw; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2 {
+    width: 43.5vw; }
+  section.slider-2 .item-slider2 .info .price {
+    bottom: -59px; }
+  section.slider-2 .swiper2 {
+    padding-bottom: 63px; } }
+
+@media (max-width: 1024px) {
+  .container,
+  header .container {
+    max-width: 1056px; }
+  section.home .item-slider .adelante .info h2 {
+    font-size: 40px;
+    max-width: 429px; }
+  section.home .flecha {
+    left: 5vw; }
+  section.home .flecha, section.home .proximo {
+    bottom: 50px; }
+  header nav .navigation ul li {
+    display: none; }
+  header nav .navigation ul li.contacto,
+  header nav .navigation ul li.menu-mobile {
+    display: inline-block; }
+  header nav .navigation ul {
+    display: flex;
+    align-items: center; }
+  header nav .navigation ul li.menu-mobile {
+    display: flex;
+    padding-right: 0; }
+  section.slider-2,
+  section.contadorsec,
+  section.beneficios,
+  footer .marquee-with-options {
+    padding: 80px 0; }
+  section.slider-2 .top h3, section.contadorsec .top h3 {
+    font-size: 30px;
+    max-width: 589px; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 5vw; }
+  section.slider-2 .item-slider2 {
+    width: 445px; }
+  section.slider-2 .item-slider2 .info span {
+    font-size: 22px; }
+  section.slider-2 .item-slider2 .info .price div:last-child {
+    font-size: 35px; }
+  section.slider-2 .item-slider2 .info .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: -32px;
+    bottom: -17px; }
+  section.slider-2 .item-slider2 .info {
+    padding: 20px;
+    padding-top: 45px; }
+  section.slider-2 .item-slider2 .info span {
+    padding: 10px 15px 10px 20px; }
+  section.slider-2 .item-slider2 .imagen .estado {
+    top: 20px;
+    left: 20px; }
+  section.contadorsec .top {
+    margin-bottom: 50px; }
+  section.contadorsec .contadores .contador .info h4 {
+    font-size: 60px;
+    margin-bottom: 30px; }
+  section.contadorsec .contadores .contador .info p {
+    font-size: 22px; }
+  section.contadorsec .contadores .contador .info .conteo span {
+    margin-bottom: 0; }
+  section.contadorsec .contadores .contador .info p {
+    padding-top: 10px; }
+  section.beneficios img.pareja {
+    height: 487px;
+    left: -211px; }
+  section.beneficios .container .part1 {
+    width: 52%; }
+  section.beneficios .container .part2 {
+    width: 48%; }
+  section.beneficios .hei {
+    min-height: auto; }
+  section.beneficios .container .part2 .animacion {
+    display: none; }
+  section.beneficios .hei2 .icons {
+    padding-top: 50px; }
+  section.beneficios .container .part2 h3, section.beneficios .hei2 h3, section.call h3 {
+    font-size: 30px; }
+  section.beneficios .hei2 h3 {
+    text-align: center; }
+  section.beneficios .hei2 {
+    padding-top: 80px; }
+  section.beneficios .hei2 .icons img {
+    max-width: 280px; }
+  section.call {
+    min-height: 300px; }
+  footer .footer2 .part1 .info .redes {
+    flex-direction: column;
+    align-items: flex-start; }
+    footer .footer2 .part1 .info .redes p {
+      padding-bottom: 15px; }
+  footer .footer2 .part2 .container div:last-child {
+    width: 40%; }
+  footer .footer2 .part2 .container div:first-child {
+    width: 60%; }
+  footer .footer2 .part2 .container {
+    align-items: flex-start; } }
+
+@media (max-width: 1000px) {
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2 {
+    width: 460px; } }
+
+@media (max-width: 920px) {
+  section.slider-2 .top,
+  section.contadorsec .top {
+    flex-direction: column; }
+  section.slider-2 .top h3, section.contadorsec .top h3 {
+    font-size: 30px;
+    max-width: 100%;
+    margin-bottom: 30px; } }
+
+@media (max-width: 768px) {
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2 {
+    width: 89vw; }
+  header nav .logo img {
+    width: 150px; }
+  header nav .navigation ul li a {
+    font-size: 18px; }
+  header nav .navigation ul li.menu-mobile img {
+    width: 56px; }
+  header nav .navigation ul li.menu-mobile {
+    padding-left: 15px; }
+  section.home .proximo {
+    padding-right: 40px; }
+  section.slider-2 .top {
+    flex-direction: column; }
+  section.slider-2 .top h3, section.contadorsec .top h3 {
+    font-size: 30px;
+    max-width: 100%;
+    margin-bottom: 30px; }
+  section.slider-2 .top a {
+    font-size: 18px; }
+  section.slider-2 .item-slider2 {
+    width: 677px; }
+  section.slider-2 .item-slider2 .info p {
+    font-size: 18px; }
+  section.slider-2 .item-slider2 .info span {
+    padding: 10px 15px 10px 30px; }
+  section.slider-2 .item-slider2 .imagen .estado {
+    top: 30px;
+    left: 30px; }
+  section.slider-2 .item-slider2 .info .price div {
+    font-size: 18px; }
+  section.slider-2 .item-slider2 .info {
+    padding: 10px 30px;
+    padding-top: 35px; }
+  section.slider-2 .item-slider2 .info .price {
+    right: -23px;
+    bottom: -17px;
+    padding: 50px 22px; }
+  section.contadorsec .top {
+    flex-direction: column; }
+  section.contadorsec .contadores {
+    flex-direction: column;
+    grid-gap: 50px; }
+  section.contadorsec .contadores .contador {
+    flex-direction: row; }
+  section.contadorsec .contadores .contador .info {
+    margin-left: 20px;
+    margin-top: 0; }
+  section.contadorsec img.casa {
+    width: 776px;
+    right: -304px; }
+  section.beneficios img.pareja {
+    position: relative;
+    height: auto;
+    width: 100%;
+    left: -40px;
+    top: -52px; }
+  section.beneficios .container .part1 {
+    width: 0; }
+  section.beneficios .container .part2 {
+    width: 100%; }
+  section.beneficios {
+    padding-top: 0; }
+  section.beneficios .hei2 .icons {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 15px; }
+  section.call {
+    min-height: 200px; }
+  footer .marquee-with-options .text p {
+    font-size: 50px; }
+  footer .footer2 .part1 .container {
+    flex-direction: column; }
+  footer .footer2 .part1 .info {
+    flex-direction: column; }
+  footer .footer2 .part1 .info .redes {
+    flex-direction: row; }
+  footer .footer2 .part1 .info {
+    grid-gap: 0px;
+    margin-top: 50px; }
+  footer .footer2 .part1 .info a.libro {
+    margin-bottom: 35px; }
+  footer .footer2 .part2 .container {
+    flex-direction: column; }
+  footer .footer2 .part2 .container div:first-child {
+    border-right: 0;
+    width: 100%;
+    padding-right: 0;
+    justify-content: center;
+    padding-bottom: 0px; }
+  footer .footer2 .part2 .container div:last-child {
+    padding-top: 30px;
+    width: 100%;
+    padding-left: 0; }
+  footer .footer2 .part2 .container div:last-child p {
+    text-align: center; }
+  footer .footer2 .pie .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0; }
+    footer .footer2 .pie .container p:first-child {
+      padding-bottom: 7px; } }
+
+@media (max-width: 500px) {
+  section.home .item-slider .adelante .info h2 {
+    font-size: 35px;
+    max-width: 371px; }
+  section.home .flecha {
+    left: 25px; }
+  section.home .proximo {
+    padding: 10px 30px; }
+  section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
+    margin-left: 26px; }
+  section.slider-2 .item-slider2 {
+    width: 88vw; }
+  section.slider-2 .item-slider2 .imagen .estado span {
+    font-size: 18px; }
+  section.slider-2 .item-slider2 .info {
+    padding: 10px 20px;
+    padding-top: 35px; }
+  section.slider-2 .item-slider2 .info span {
+    padding: 10px 15px 10px 20px; }
+  section.slider-2 .item-slider2 .imagen .estado {
+    top: 20px;
+    left: 20px; }
+  section.contadorsec .contadores .contador .info p {
+    font-size: 20px; }
+  section.contadorsec img.casa {
+    width: 776px;
+    right: -343px; }
+  section.beneficios img.pareja {
+    width: 103%;
+    top: -35px; }
+  section.beneficios .hei2 .icons img {
+    max-width: 220px; } }
