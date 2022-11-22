@@ -93,6 +93,10 @@ document.addEventListener("click", function (e) {
   if (e.target.closest("li a")) {
     localStorage.setItem('CatNovedad', "none");
   }
+  if (e.target.closest("header nav .navigation ul li.menu-mobile img")) {
+    document.querySelector("section.menuMovil").classList.toggle("open");
+    document.querySelector("header nav .navigation ul li.menu-mobile").classList.toggle("change");
+  }
 })
 
 
@@ -242,6 +246,18 @@ MyApp = {
           },
           '769':{
             spaceBetween: 60,
+            // slidesPerView: 'auto',
+            // slidesPerView: false,
+            freeMode: {
+              enabled: true,
+            },
+          },
+          '375':{
+            spaceBetween: 100,
+            // slidesPerView: 'auto',
+            freeMode: {
+              enabled: false,
+            },
           },
         },
       });
