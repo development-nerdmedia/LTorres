@@ -1,17 +1,17 @@
 AOS.init();
 var data = sessionStorage.getItem('popUp');
 var URLactual = window.location;
-if (data === "false") {
-  document.body.classList.remove("hide-scrolling");
-  $(`section.popup`).hide();
-}else{  
-  setTimeout(() => {
-    document.querySelector('.popup').classList.add("mostrarPop");
-    document.body.classList.add("hide-scrolling");
-  }, 2000);
-}
 
 if ($(".popup.inicio").length > 0) {
+  if (data === "false") {
+    document.body.classList.remove("hide-scrolling");
+    $(`section.popup`).hide();
+  }else{  
+    setTimeout(() => {
+      document.querySelector('.popup').classList.add("mostrarPop");
+      document.body.classList.add("hide-scrolling");
+    }, 2000);
+  }
   document.body.classList.remove("hide-scrolling");
 }else{
   document.body.classList.remove("hide-scrolling");
@@ -75,15 +75,22 @@ $(".itemNoticia").hover(function () {
 document.addEventListener("click", function (e) {
   var formespacioselect = document.querySelectorAll('.formulario form select');
   if (e.target.closest(".formulario form select")) {
+    // formespacioselect.forEach(function (shinyItem2) {
+    //     shinyItem2.parentElement.classList.remove("active");
+    // })
+    if (e.target.parentElement.classList.contains("active")) {
+      console.log("des");
+      e.target.parentElement.classList.remove("active");
+    }else{
+      e.target.parentElement.classList.add("active");
+    }
+  } 
+  else {
     formespacioselect.forEach(function (shinyItem2) {
-        shinyItem2.parentElement.classList.remove("active");
-    })
-    e.target.parentElement.classList.add("active");
-  } else {
-    formespacioselect.forEach(function (shinyItem2) {
-        shinyItem2.parentElement.classList.remove("active");
+        shinyItem2.parentElement.classList.remove("active")
     });
   }
+
 
   if (e.target.closest("section.bannerInterna .part2 a.categoria")) {
     const titleProyect = e.target.getAttribute('data-category');
@@ -335,9 +342,9 @@ MyApp = {
         noSwiping: true,
         noSwipingClass: 'item-slider-proyecto',
         loop: true,
-        autoplay: {
-          delay: 3000,
-        },
+        // autoplay: {
+        //   delay: 5000,
+        // },
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",

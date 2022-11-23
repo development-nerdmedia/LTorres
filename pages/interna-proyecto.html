@@ -146,7 +146,7 @@
         <section class="datos">
             <div class="container">
                 <div class="part1 part">
-                    <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1500">
+                    <div class="info" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500">
                         <img src="../img/ubicacion.svg" alt="">
                         <div class="datosInfo">
                             <span>Sala de ventas:</span>
@@ -157,15 +157,21 @@
                 <div>
                     
                 <div class="part2 part">
-                    <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1500">
-                        <img src="../img/metro.svg" alt=""><span>Metros:</span>
-                        <p>90m</p>
+                    <div class="info" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500">
+                        <img src="../img/metro.svg" alt="">
+                        <div class="datosInfo">
+                            <span>Metros:</span>
+                            <p>90m</p>
+                        </div>
                     </div>
                 </div>
                 <div class="part3 part">
-                    <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1500">
-                        <img src="../img/cuota.svg" alt=""><span>Cuotas desde:</span>
-                        <p>S/ 1499</p>
+                    <div class="info" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500">
+                        <img src="../img/cuota.svg" alt="">
+                        <div class="datosInfo">
+                            <span>Cuotas desde:</span>
+                            <p>S/ 1499</p>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -177,7 +183,7 @@
                 <img src="../img/video-portada.jpg" alt="">
                 <div class="filtro"></div>
             </div>
-            <img src="../img/play.svg" alt="">
+            <img class="play" src="../img/play.svg" alt="">
             <div class="urlvieo">
                 <p>https://www.youtube.com/embed/boBrBy_bDrM</p>
             </div>
@@ -232,10 +238,12 @@
                 <div>
                     <div class="mapa">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.7961250119174!2d-77.03819308457531!3d-12.057544045385493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c72b9be265%3A0x312e8541a16bf8e6!2sPaseo%20de%20los%20H%C3%A9roes%20Navales!5e0!3m2!1ses-419!2spe!4v1668445524921!5m2!1ses-419!2spe" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>                    
-                    <a href="#" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500"><img src="../img/icon-maqueta.svg" alt="">Maqueta</a>
-                    <a href="#" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500"><img src="../img/icon-plano.svg" alt="">Plano en 3D</a>
-                    <a href="#" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500"><img src="../img/icon-ubicacion.svg" alt="">Carabayllo 15121, Perú</a>
+                    </div>      
+                    <div class="botones">
+                        <a href="#" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500" class="hvr-icon-push"><img src="../img/icon-ubicacion.svg" alt="" class="hvr-icon">Carabayllo 15121, Perú</a>
+                        <a href="#" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500" class="hvr-icon-push"><img src="../img/icon-maqueta.svg" alt="" class="hvr-icon">Maqueta</a>
+                        <a href="#" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500" class="hvr-icon-push"><img src="../img/icon-plano.svg" alt="" class="hvr-icon">Plano en 3D</a>
+                    </div>              
                 </div>                
             </div>
             <div class="lugaresCercanos">
@@ -262,13 +270,19 @@
         <section class="slider-proyecto">
             <div class="swiper-wrapper">
                 <div class="swiper-slide item-slider-proyecto">
-                    <img src="../img/item-proyecto.jpg" alt="">
+                    <div class="fondo">
+                        <img src="../img/item-proyecto.jpg" alt="">
+                    </div>
                 </div>
                 <div class="swiper-slide item-slider-proyecto">
-                    <img src="../img/item-proyecto.jpg" alt="">
+                    <div class="fondo">
+                        <img src="../img/item-proyecto.jpg" alt="">
+                    </div>
                 </div>
                 <div class="swiper-slide item-slider-proyecto">
-                    <img src="../img/item-proyecto.jpg" alt="">
+                    <div class="fondo">
+                        <img src="../img/item-proyecto.jpg" alt="">
+                    </div>
                 </div>
             </div>
             <div class="swiper-button-next" data-aos="fade-up" data-aos-once="true" data-aos-duration="1500"></div>
@@ -285,7 +299,8 @@
                 <div class="part1">
                     <img class="person" src="../img/person.png" alt="">
                     <div class="mensaje">
-                        <img src="../img/muesca.svg" alt="">
+                        <img src="../img/muesca.svg" class="muesca1" alt="">
+                        <img src="../img/muesca2.jpg" alt="" class="muesca2">
                         <p><b>Lorem ipsum dolor sit amet,</b> adipiscing elit dolor sit amet.</p>
                     </div>
                 </div>
