@@ -703,10 +703,13 @@ section.slider-2 {
     width: 580px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
     section.slider-2 .item-slider2 a {
-      text-decoration: none; }
+      text-decoration: none;
+      position: relative; }
     section.slider-2 .item-slider2 .imagen {
       display: flex;
-      position: relative; }
+      position: relative;
+      height: 362.38px;
+      overflow: hidden; }
       section.slider-2 .item-slider2 .imagen img {
         width: 100%;
         border-radius: 16px 16px 0 0; }
@@ -737,11 +740,10 @@ section.slider-2 {
       background-color: #fff;
       border-radius: 0 0 16px 16px;
       padding: 20px 30px;
-      padding-top: 45px;
-      position: relative; }
+      padding-top: 45px; }
       section.slider-2 .item-slider2 .info span {
         position: absolute;
-        top: -25px;
+        bottom: 94.5px;
         left: 0;
         font-family: var(--fuente-Raleway);
         font-size: 25px;
@@ -750,7 +752,8 @@ section.slider-2 {
         color: #fff;
         background: linear-gradient(178.05deg, #858585 44.48%, #565658 98.35%);
         padding: 10px 15px 10px 30px;
-        border-radius: 0px 40px 40px 0px; }
+        border-radius: 0px 40px 40px 0px;
+        max-width: 364px; }
       section.slider-2 .item-slider2 .info p {
         font-family: var(--fuente-Open);
         font-weight: 400;
@@ -924,6 +927,7 @@ section.beneficios {
       section.beneficios .container .part2 ul li:last-child {
         margin-bottom: 0; }
     section.beneficios .container .part2 .animacion {
+      width: 294px;
       position: absolute;
       bottom: -120px;
       right: 0; }
@@ -1235,7 +1239,8 @@ section.proyectos {
         text-decoration: none; }
       section.proyectos .contentProyectos .item-slider2 .imagen {
         display: flex;
-        position: relative; }
+        position: relative;
+        overflow: hidden; }
         section.proyectos .contentProyectos .item-slider2 .imagen img {
           width: 100%;
           border-radius: 16px 16px 0 0; }
@@ -1266,12 +1271,11 @@ section.proyectos {
         background-color: #fff;
         border-radius: 0 0 16px 16px;
         padding: 20px 30px;
-        padding-top: 45px;
-        position: relative; }
+        padding-top: 45px; }
         section.proyectos .contentProyectos .item-slider2 .info span {
           position: absolute;
-          top: -25px;
           left: 0;
+          bottom: 94.5px;
           font-family: var(--fuente-Raleway);
           font-size: 25px;
           font-weight: 700;
@@ -1279,7 +1283,8 @@ section.proyectos {
           color: #fff;
           background: linear-gradient(178.05deg, #858585 44.48%, #565658 98.35%);
           padding: 10px 15px 10px 30px;
-          border-radius: 0px 40px 40px 0px; }
+          border-radius: 0px 40px 40px 0px;
+          max-width: 364px; }
         section.proyectos .contentProyectos .item-slider2 .info p {
           font-family: var(--fuente-Open);
           font-weight: 400;
@@ -2833,6 +2838,8 @@ section.thnaks {
 @media (max-width: 1340px) {
   section.slider-2 .item-slider2 {
     width: 40.3vw; }
+  section.slider-2 .item-slider2 .imagen {
+    height: 25.178vw; }
   section.beneficios img.pareja {
     left: -346px; } }
 
@@ -2888,6 +2895,8 @@ section.thnaks {
   section.slider-2 .item-slider2 {
     width: 517px;
     width: 40vw; }
+  section.slider-2 .item-slider2 .imagen {
+    height: 24.99vw; }
   section.contadorsec .contadores .contador {
     flex-direction: column;
     align-items: flex-start; }
@@ -2983,6 +2992,10 @@ section.thnaks {
     bottom: -101px; }
   /* end 1280 */ }
 
+@media (max-width: 1245px) {
+  section.slider-2 .item-slider2 .info span {
+    max-width: 321px; } }
+
 @media (max-width: 1170px) {
   section.slider-2 .swiper2 .swiper-wrapper .item-slider2:first-child {
     margin-left: 5vw; }
@@ -2992,6 +3005,8 @@ section.thnaks {
     left: 5vw; }
   section.slider-2 .swiper2 .swiper-wrapper .item-slider2 {
     width: 43.5vw; }
+  section.slider-2 .item-slider2 .imagen {
+    height: 27.177vw; }
   section.slider-2 .item-slider2 .info .price {
     bottom: -59px; }
   section.slider-2 .swiper2 {
@@ -3004,7 +3019,6 @@ section.thnaks {
     left: -288px; }
   section.proyectos .contentProyectos .item-slider2 .info span {
     top: initial;
-    bottom: 24%;
     max-width: 250px; }
   section.proyectos .contentProyectos .item-slider2 .info {
     position: initial; }
@@ -3258,7 +3272,6 @@ section.thnaks {
     position: relative; }
   section.proyectos .contentProyectos .item-slider2 .info span {
     top: initial;
-    bottom: 24%;
     max-width: 250px; }
   section.proyectos .contentProyectos .item-slider2 .info .price div:last-child {
     font-size: 35px; }
@@ -3370,6 +3383,8 @@ section.thnaks {
     display: block; }
   section.contacto .container .part1 .datos .itemDatos {
     margin-bottom: 50px; }
+  section.slider-2 .item-slider2 .info span {
+    max-width: 285px; }
   /* end 1024 */ }
 
 @media (max-width: 1024px) and (min-height: 880px) {
@@ -3405,6 +3420,8 @@ section.thnaks {
 @media (max-width: 1000px) {
   section.slider-2 .swiper2 .swiper-wrapper .item-slider2 {
     width: 460px; }
+  section.slider-2 .item-slider2 .imagen {
+    height: 287.391px; }
   section.beneficios img.pareja {
     left: -243px; }
   section.banner .info {
@@ -3677,6 +3694,8 @@ section.thnaks {
     margin-left: 5vw; }
   section.slider-2 .swiper2 .swiper-wrapper .item-slider2 {
     width: 89vw; }
+  section.slider-2 .item-slider2 .imagen {
+    height: 55.6vw; }
   header nav .logo img {
     width: 150px; }
   header nav .navigation ul li a {
@@ -3802,12 +3821,8 @@ section.thnaks {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 85px; }
   section.proyectos .contentProyectos .item-slider2 .info span {
-    max-width: 100%; }
-  section.proyectos .contentProyectos .item-slider2 .info {
-    position: relative; }
+    max-width: 70%; }
   section.proyectos .contentProyectos .item-slider2 .info span {
-    top: -25px;
-    bottom: initial;
     font-size: 22px; }
   section.proyectos .container ul {
     margin-left: 0px; }
@@ -3966,6 +3981,8 @@ section.thnaks {
     top: 42px; }
   section.beneficios .container .part2 {
     padding-bottom: 0; }
+  section.slider-2 .item-slider2 .info span {
+    bottom: 70px; }
   /* end 768 */ }
 
 @media (max-width: 670px) {
@@ -3995,7 +4012,6 @@ section.thnaks {
     padding: 44px 13px; }
   section.slider-2 .item-slider2 .info span {
     top: initial;
-    bottom: 20%;
     max-width: 220px; }
   section.slider-2 .item-slider2 .info {
     position: initial; }
