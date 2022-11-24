@@ -354,6 +354,65 @@ MyApp = {
 
       // function Contador() {
         /* Nuevo metodo unitario */
+        
+      // }
+
+
+
+      // window.addEventListener("scroll", () => {
+      //   let windowBottom = window.pageYOffset + window.innerHeight;
+      //   const contenedor = document.querySelector(".contadorsec")
+      //   // document.querySelectorAll(".contadorsec").forEach(el => {
+      //     let objectBottom = contenedor.offsetTop + contenedor.offsetHeight;
+      //     if (objectBottom < windowBottom) {
+      //       Contador();
+      //     }
+      //   // });
+      // })
+
+      /* Con un for */
+
+      // const contadores = document.querySelectorAll(".contadorsec .contadores .contador");
+
+      // for (let i = 0; i < contadores.length; i++) {
+      //   var numero = contadores[i].querySelector("h4")
+      //   var meta = parseInt(contadores[i].querySelector("span.meta").textContent)
+      //   let cantidad = 0;
+
+      //   let tiempo = setInterval(() => {
+      //     cantidad+=1
+      //     numero.textContent = cantidad
+
+      //     if (cantidad === meta) {
+      //       clearInterval(tiempo)
+      //     }
+      //   }, 80);
+      // }
+
+      gsap.registerPlugin(ScrollTrigger);
+      const contadorsec = document.querySelectorAll(".contadorsec");
+      
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.contadorsec',
+          // markers: true,
+          start: '-40% 50%',
+          end: '100% 100%',
+          scrub: 1,
+        },
+      });
+      tl.to(contadorsec, { rotation: 0, duration: 0 })
+      tl.fromTo(
+        '.contadorsec',
+        0.1,
+        {
+          opacity: 1
+        },
+        {
+          opacity: 1
+        }
+      )
+      tl.add(function () {
         const numero = document.querySelectorAll(".contadorsec .contadores .contador h4")
         const meta = document.querySelectorAll(".contadorsec .contadores .contador span.meta")
         const numbermeta = parseInt(meta[0].textContent)
@@ -392,39 +451,9 @@ MyApp = {
             clearInterval(tiempo3)
           }
         }, 38);
-      // }
+      })
 
 
-
-      // window.addEventListener("scroll", () => {
-      //   let windowBottom = window.pageYOffset + window.innerHeight;
-      //   const contenedor = document.querySelector(".contadorsec")
-      //   // document.querySelectorAll(".contadorsec").forEach(el => {
-      //     let objectBottom = contenedor.offsetTop + contenedor.offsetHeight;
-      //     if (objectBottom < windowBottom) {
-      //       Contador();
-      //     }
-      //   // });
-      // })
-
-      /* Con un for */
-
-      // const contadores = document.querySelectorAll(".contadorsec .contadores .contador");
-
-      // for (let i = 0; i < contadores.length; i++) {
-      //   var numero = contadores[i].querySelector("h4")
-      //   var meta = parseInt(contadores[i].querySelector("span.meta").textContent)
-      //   let cantidad = 0;
-
-      //   let tiempo = setInterval(() => {
-      //     cantidad+=1
-      //     numero.textContent = cantidad
-
-      //     if (cantidad === meta) {
-      //       clearInterval(tiempo)
-      //     }
-      //   }, 80);
-      // }
     }
   },
   historia:{
@@ -443,6 +472,7 @@ MyApp = {
             offset_top: 150,
         });
       }
+      
     }
   },
   formularioReferidos:{
