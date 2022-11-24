@@ -1240,6 +1240,7 @@ section.proyectos {
       section.proyectos .contentProyectos .item-slider2 .imagen {
         display: flex;
         position: relative;
+        height: 373.3px;
         overflow: hidden; }
         section.proyectos .contentProyectos .item-slider2 .imagen img {
           width: 100%;
@@ -2740,6 +2741,8 @@ section.thnaks {
     left: -258px; } }
 
 @media (max-width: 1440px) {
+  section.proyectos .contentProyectos .item-slider2 .imagen {
+    height: 355.81px; }
   section.banner .info {
     padding: 50px 100px 50px 50px;
     width: 703px; }
@@ -2835,6 +2838,10 @@ section.thnaks {
   section.nosotros .content .part1 {
     padding-left: 5vw; } }
 
+@media (max-width: 1359px) {
+  section.proyectos .contentProyectos .item-slider2 .imagen {
+    height: 26.16vw; } }
+
 @media (max-width: 1340px) {
   section.slider-2 .item-slider2 {
     width: 40.3vw; }
@@ -2848,6 +2855,8 @@ section.thnaks {
     right: 14.5vw; } }
 
 @media (max-width: 1280px) {
+  section.proyectos .contentProyectos .item-slider2 .imagen {
+    height: 26.65vw; }
   section.proyectos .contentProyectos {
     grid-gap: 60px; }
   section.banner .info {
@@ -3674,6 +3683,8 @@ section.thnaks {
     width: 100%; } }
 
 @media (max-width: 768px) {
+  section.proyectos .contentProyectos .item-slider2 .imagen {
+    height: 54.6vw; }
   main {
     padding-top: 102px; }
   section.menuMovil {

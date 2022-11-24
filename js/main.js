@@ -395,7 +395,6 @@ MyApp = {
       var tl = gsap.timeline({
         scrollTrigger: {
           trigger: '.contadorsec',
-          // markers: true,
           start: '-40% 50%',
           end: '100% 100%',
           scrub: 1,
