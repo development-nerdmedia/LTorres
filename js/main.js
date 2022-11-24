@@ -79,7 +79,6 @@ document.addEventListener("click", function (e) {
     //     shinyItem2.parentElement.classList.remove("active");
     // })
     if (e.target.parentElement.classList.contains("active")) {
-      console.log("des");
       e.target.parentElement.classList.remove("active");
     }else{
       e.target.parentElement.classList.add("active");
@@ -294,12 +293,9 @@ MyApp = {
       for (let i = 0; i < enlaces.length; i++) {
         textoitem = enlaces[i].textContent;
         listaTitle.push(textoitem);
-        console.log(listaTitle);
-        console.log(categoriaNovedad);
       }
 
       if (listaTitle.includes(categoriaNovedad)) {
-        console.log("esta");
         for (let y = 0; y < enlaces.length; y++) {
             if (categoriaNovedad === enlaces[y].textContent) {
                 document.querySelector("#categorias li").classList.remove("select");
@@ -310,10 +306,7 @@ MyApp = {
 
       $('.item-slider2').hide();
 
-      var categoryMain = document.querySelector('#categorias li.select').innerHTML;      
-
-      // categoryMain = localStorage.getItem("CatNovedad");
-      // console.log(categoryMain);
+      var categoryMain = document.querySelector('#categorias li.select').innerHTML;   
 
       if (categoryMain === "Todos") {
         $(`.item-slider2`).show(0);
@@ -342,9 +335,9 @@ MyApp = {
         noSwiping: true,
         noSwipingClass: 'item-slider-proyecto',
         loop: true,
-        // autoplay: {
-        //   delay: 5000,
-        // },
+        autoplay: {
+          delay: 5000,
+        },
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",
@@ -553,7 +546,6 @@ MyApp = {
     init: function () {
       var link = localStorage.getItem("URL");
         $('.thnaks .close').attr("href", link);
-        console.log(localStorage.getItem("URL"));
     }
   },
   videoPortada:{
