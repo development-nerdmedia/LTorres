@@ -2754,10 +2754,10 @@ section.bannerBlog{
     .container{
         display: flex;
         justify-content: space-between;
-        grid-gap: 170px;
         .part1{
             width: 50%;
             color: #fff;
+            padding-right: 85px;
             h1{
                 font-family: var(--fuente-Raleway);
                 font-weight: 600;
@@ -2840,6 +2840,7 @@ section.bannerBlog{
         }
         .part2{
             width: 50%;
+            padding-left: 85px;
             img{
                 width: 100%;
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -3139,6 +3140,7 @@ section.contacto{
             width: 50%;
             display: flex;
             justify-content: flex-end;
+            padding-left: 80px;
         }
     }
 }
@@ -3202,6 +3204,7 @@ section.thnaks{
         position: absolute;
         right: 60px;
         top: 60px;
+        z-index: 5;
     }
     .content{
         display: flex;
@@ -3218,8 +3221,7 @@ section.thnaks{
         h1{
             font-family: var(--fuente-Raleway);
             font-weight: 600;
-            font-size: 60px;
-            line-height: 70px;
+            font-size: 50px;
             text-align: center;
             padding: 30px 0;
             b{
@@ -3495,6 +3497,18 @@ section.thnaks{
         left: 244px;
         padding: 30px 30px;
     }
+
+    section.bannerBlog .container .part1{
+        padding-right: 45px;
+    }
+
+    section.bannerBlog .container .part2{
+        padding-left: 45px;
+    }
+
+
+
+    /* end 1440 */
 }
 
 @media (max-width: 1400px) {
@@ -3644,11 +3658,19 @@ section.thnaks{
     section.beneficios .hei2 .icons img{
         max-width: 324px;
     }
-    section.bannerInterna .part1 h2{
+    section.bannerInterna .part1 h2,
+    section.thnaks .content h1{
         font-size: 45px;
+    }
+    section.thnaks .content h1{
+        padding: 20px 0;
     }
     section.bannerInterna .part2 a.categoria{
         padding: 10px 30px;
+    }
+    section.thnaks .casa{
+        width: 565px;
+        right: 65px;
     }
     section.bannerInterna .part1 {
         max-width: 394px;
@@ -3687,15 +3709,47 @@ section.thnaks{
     }
     section.misionVisio .container .part h2,
     section.historia h2,
-    section.formularioReferidos .container .part1 .imgScroll h3{
+    section.formularioReferidos .container .part1 .imgScroll h3,
+    section.bannerBlog .container .part1 h1,
+    .articuloContent .cabecera .part1 h1,
+    .articuloContent .relacionados h2,
+    section.contacto .container .part1 h3{
         font-size: 35px;
     }
     section.historia .historiaContainer .cards .cardItem:nth-of-type(even){
         padding-left: 70px;
     }
-    section.formularioReferidos .part2 {
+    section.formularioReferidos .part2,
+    section.contacto .container .part2 {
         padding-left: 50px;
     }
+    section.bannerBlog .container .part1 {
+        padding-right: 20px;
+    }
+    section.bannerBlog .container .part2 {
+        padding-left: 20px;
+    }
+    section.noticias .contentNoticas {
+        column-gap: 35px;
+    }
+    .articuloContent .cabecera .part1{
+        max-width: 516px;
+    }
+    .articuloContent .relacionados .artRelacionados{
+        grid-gap: 25px;
+    }
+
+    .articuloContent .textContent .texto{
+        max-width: 728;
+    }
+
+    section.thnaks a.close {
+        right: 48px;
+        top: 48px;
+    }
+
+
+    /* end 1280 */
 }
 
 @media (max-width: 1170px) {
@@ -3783,6 +3837,7 @@ section.thnaks{
             justify-content: space-between;
         }
         ul{
+            margin-bottom: 30px;
             li{
                 padding: 15px 0;
                 a{
@@ -3935,11 +3990,20 @@ section.thnaks{
     section.misionVisio,
     .elementos,
     section.historia,
-    section.formularioReferidos {
+    section.formularioReferidos,
+    section.bannerBlog,
+    section.noticias,
+    .articuloContent,
+    section.contacto {
         padding: 80px 0;
     }
-    section.proyectos .contentProyectos{
+    section.proyectos .contentProyectos,
+    .articuloContent .relacionados{
         margin-top: 80px;
+    }
+    .articuloContent .cabecera,
+    .articuloContent .textContent img{
+        margin-bottom: 80px;
     }
     section.slider-2 .top h3, section.contadorsec .top h3{
         font-size: 30px;
@@ -4157,13 +4221,20 @@ section.thnaks{
     }
     section.misionVisio .container .part h2,
     .elementos h2,
-    section.historia h2{
+    section.historia h2,
+    section.bannerBlog .container .part1 h1,
+    .articuloContent .cabecera .part1 h1, .articuloContent .relacionados h2,
+    section.contacto .container .part1 h3{
         font-size: 30px;
     }
     section.historia .historiaContainer{
         margin-top: 80px;
     }
-    section.historia .historiaContainer .cards .card .info h3 {
+    section.historia .historiaContainer .cards .card .info h3,
+    .itemNoticia h3,
+    .articuloContent .cabecera .part2,
+    section.contacto .container .part1 .datos .itemDatos,
+    section.contacto .container .part1 .datos .itemDatos p{
         font-size: 22px;
     }
     .formulario form input, .formulario form select{
@@ -4172,11 +4243,94 @@ section.thnaks{
     section.formularioReferidos .container .part2 .formulario .agregar button {
         padding: 10px 15px;
     }
-    section.formularioReferidos .container .part1 {
+    section.formularioReferidos .container .part1,
+    section.contacto .container .part1 {
         width: 45%;
     }
-    section.formularioReferidos .container .part2 {
+    section.formularioReferidos .container .part2,
+    section.contacto .container .part2 {
         width: 55%;
+    }
+    section.bannerBlog .container .part1 p{
+        margin: 20px 0;
+    }
+    section.bannerBlog .container .part1 a {
+        padding: 10px 30px;
+        padding-right: 63px;
+    }
+    .articuloContent .cabecera .part1 h1{
+        margin: 20px 0;
+    }
+    .articuloContent .cabecera .part2 span{
+        margin-bottom: 20px;
+    }
+    .articuloContent .textContent .texto{
+        max-width: 666px;
+    }
+    .articuloContent .relacionados .artRelacionados {
+        grid-gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .articuloContent .relacionados .artRelacionados .itemNoticia{
+        display: none;
+    }
+    .articuloContent .relacionados .artRelacionados .itemNoticia:nth-child(1){
+        display: block;
+    }
+    .articuloContent .relacionados .artRelacionados .itemNoticia:nth-child(2){
+        display: block;
+    }
+
+    section.contacto .container .part1 .datos .itemDatos{
+        margin-bottom: 50px;
+    }
+
+    /* end 1024 */
+}
+
+@media (max-width: 1024px) and (min-height: 880px){    
+    section.menuMovil{
+        padding: 80px 0;
+    }
+    @media (min-height: 950px){
+        section.menuMovil ul li {
+            padding: 20px 0;
+        }
+    }
+    @media (min-height: 1000px){
+        // section.menuMovil ul li {
+        //     padding: 20px 0;
+        // }
+        section.menuMovil .menuFooter span{
+            padding-bottom: 20px;
+        }
+        section.menuMovil .menuFooter p{
+            padding-bottom: 40px;
+        }
+        section.menuMovil ul li {
+            padding: 28px 0;
+        }
+    }
+}
+
+@media (max-width: 1024px) and (max-height: 770px) {
+    section.menuMovil ul li a{
+        font-size: 35px;
+    }
+    section.menuMovil ul li {
+        padding: 10px 0;
+    }
+    section.menuMovil ul li:first-child {
+        padding-top: 0;
+    }
+    section.menuMovil ul li:last-child {
+        padding-bottom: 0;
+    }
+
+    @media (max-height: 700px) {
+        section.menuMovil{
+            padding: 28px 0;
+        }
     }
 }
 
@@ -4422,6 +4576,19 @@ section.thnaks{
     .elementos .elementosContent{
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .articuloContent .cabecera{
+        flex-direction: column;
+    }
+    .articuloContent .cabecera .part1 {
+        max-width: 100%;
+    }
+    .articuloContent .cabecera .part2{
+        align-items: flex-start;
+    }
+
+
+    /* end 920 */
 }
 
 @media (max-width: 890px) {
@@ -4683,7 +4850,8 @@ section.thnaks{
         transform: translateY(150px) !important;
     }
     section.proyectos,
-    section.formularioReferidos{
+    section.formularioReferidos,
+    section.contacto{
         padding: 180px 0;
         padding-bottom: 80px;
     }
@@ -4816,18 +4984,24 @@ section.thnaks{
         margin: 0 31px;
         margin-top: 50px;
     }
-    section.formularioReferidos .container{
+    section.formularioReferidos .container,
+    section.contacto .container{
         flex-direction: column-reverse;
     }
-    section.formularioReferidos .container .part1 {
+    section.formularioReferidos .container .part1,
+    section.contacto .container .part1,
+    section.contacto .container .part2 {
         width: 100%;
     }
-    section.formularioReferidos .container .part2 {
+    section.formularioReferidos .container .part2,
+    section.contacto .container .part2
+     {
         width: 100%;
         padding-left: 0px;
         justify-content: center;
     }
-    section.formularioReferidos .container .part1{
+    section.formularioReferidos .container .part1,
+    section.contacto .container .part1{
         margin-top: 50px;
     }
     section.misionVisio .container .part h2, section.historia h2, section.formularioReferidos .container .part1 .imgScroll h3 {
@@ -4841,6 +5015,77 @@ section.thnaks{
         max-width: 452px;
         margin: 0 auto;
     }
+    section.bannerBlog .container{
+        flex-direction: column-reverse;
+    }
+    section.bannerBlog .container .part1 {
+        padding-right: 0;
+        width: 100%;
+    }
+    section.bannerBlog .container .part2{
+        padding-left: 0;
+        width: 100%;
+    }
+    section.bannerBlog .container .part2 img{
+        max-width: 450px;
+        display: flex;
+        margin: 0 auto;
+    }
+    section.bannerBlog .container .part2{
+        margin-bottom: 50px;
+    }
+
+    section.noticias .contentNoticas {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    section.noticias .contentNoticas {
+        grid-gap: 50px;
+    }
+
+    .textContent .contentImg{
+        position: relative;
+        height: 325px;
+        margin-bottom: 80px;
+        .fondo{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            img{
+                width: 769px;
+                min-width: 100%;
+                min-height: 100%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+
+    .articuloContent .textContent img {
+        margin-bottom: 0;
+    }
+
+    section.thnaks .content h1{
+        font-size: 40px;
+    }
+
+    section.thnaks .casa {
+        width: 480px;
+    }
+    section.thnaks a.close {
+        right: 35px;
+        top: 42px;
+    }
+
+    /* end 768 */
 }
 
 @media (max-width: 670px) {
@@ -4875,6 +5120,10 @@ section.thnaks{
 }
 
 @media (max-width: 500px) {
+    section.thnaks a.close {
+        right: 36px;
+        top: 35px;
+    }
     section.menuMovil ul li a{
         font-size: 35px;
     }
@@ -5032,6 +5281,26 @@ section.thnaks{
     .formulario form input, .formulario form select {
         padding: 10px 17px;
     }
+
+    .articuloContent .relacionados .artRelacionados {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .articuloContent .relacionados .artRelacionados .itemNoticia {
+        display: block;
+    }
+    .textContent .contentImg{
+        height: 284px;
+    }
+
+    section.thnaks .content h1 {
+        font-size: 35px;
+    }
+    section.thnaks .casa {
+        width: 392px;
+        right: 40px;
+    }
+
+    /* end 500px */
 }
 
 @media (max-width: 430px) {
