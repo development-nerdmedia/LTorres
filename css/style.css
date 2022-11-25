@@ -331,7 +331,7 @@ section.popup {
       font-weight: 800;
       font-size: 20px;
       position: absolute;
-      bottom: 30px;
+      bottom: 75px;
       left: 30px;
       position: relative;
       padding-right: 45px; }
@@ -997,6 +997,9 @@ section.beneficios {
       section.beneficios .hei2 .icons div img {
         width: 100%; }
 
+a.sectionCall {
+  text-decoration: none; }
+
 section.call {
   position: relative;
   overflow: hidden;
@@ -1005,8 +1008,6 @@ section.call {
   display: flex;
   align-items: center;
   justify-content: center; }
-  section.call a {
-    text-decoration: none; }
   section.call img {
     position: fixed;
     top: 50%;
@@ -2552,6 +2553,8 @@ section.contacto {
 
 section.mapaUbicacion {
   position: relative; }
+  section.mapaUbicacion .mapa {
+    display: flex; }
   section.mapaUbicacion iframe {
     width: 100% !important;
     height: 500px !important; }
