@@ -2618,7 +2618,8 @@ section.thnaks {
       font-weight: 600;
       font-size: 50px;
       text-align: center;
-      padding: 30px 0; }
+      padding: 30px 0;
+      padding-top: 10px !important; }
       section.thnaks .content h1 b {
         font-weight: 800; }
     section.thnaks .content a {
@@ -3060,6 +3061,8 @@ section.thnaks {
 
 @media (max-width: 1024px) {
   /* MENU MOVIL */
+  header nav .navigation ul li.menu-mobile img {
+    height: 54px; }
   section.menuMovil {
     display: block;
     width: 100%;
@@ -3085,6 +3088,18 @@ section.thnaks {
           font-weight: 800;
           font-size: 40px;
           color: var(--color-gris); }
+        section.menuMovil ul li a.select {
+          color: var(--color-anaranjado);
+          position: relative; }
+          section.menuMovil ul li a.select::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 5px;
+            background-color: var(--color-anaranjado);
+            top: 50%;
+            left: -50px;
+            transform: translateY(-50%); }
       section.menuMovil ul li:first-child {
         padding-top: 0; }
       section.menuMovil ul li:last-child {
@@ -3108,10 +3123,25 @@ section.thnaks {
         padding-bottom: 15px; }
       section.menuMovil .menuFooter div:last-child {
         display: flex;
-        grid-gap: 20px;
-        align-items: center; }
+        grid-gap: 30px;
+        align-items: center;
+        margin-left: 7px; }
         section.menuMovil .menuFooter div:last-child a {
-          display: flex; }
+          display: flex;
+          position: relative; }
+          section.menuMovil .menuFooter div:last-child a::before {
+            content: "";
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--color-anaranjado); }
+          section.menuMovil .menuFooter div:last-child a svg {
+            z-index: 1;
+            width: 20px; }
   section.menuMovil.open {
     transform: translate(0%); }
   /* END MENU MOVIL*/
@@ -4162,6 +4192,8 @@ section.thnaks {
   section.thnaks .casa {
     width: 392px;
     right: 40px; }
+  section.menuMovil ul li a.select::before {
+    left: -45px; }
   /* end 500px */ }
 
 @media (max-width: 430px) {
@@ -4182,8 +4214,12 @@ section.thnaks {
       width: 45px; } }
 
 @media (max-width: 425px) {
+  header nav .navigation ul li.menu-mobile {
+    padding-left: 5px; }
   section.popup .content {
     margin: 0 15px; }
+  header nav .navigation ul li.menu-mobile img {
+    height: 45px; }
   header nav .logo img {
     width: 125px; }
   header nav .navigation ul li.contacto a {

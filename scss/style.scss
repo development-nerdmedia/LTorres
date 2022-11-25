@@ -3240,6 +3240,7 @@ section.thnaks{
             font-size: 50px;
             text-align: center;
             padding: 30px 0;
+            padding-top: 10px !important;
             b{
                 font-weight: 800;
             }
@@ -3874,6 +3875,11 @@ section.thnaks{
 
 @media (max-width: 1024px) {      
     /* MENU MOVIL */
+    header nav .navigation ul li.menu-mobile{
+        img{
+            height: 54px;
+        }
+    }
     section.menuMovil{
         display: block;
         width: 100%;
@@ -3900,6 +3906,20 @@ section.thnaks{
                     font-weight: 800;
                     font-size: 40px;
                     color: var(--color-gris);
+                }
+                a.select{
+                    color: var(--color-anaranjado);
+                    position: relative;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 40px;
+                        height: 5px;
+                        background-color: var(--color-anaranjado);
+                        top: 50%;
+                        left: -50px;
+                        transform: translateY(-50%);
+                    }
                 }
             }
             li:first-child{
@@ -3933,11 +3953,27 @@ section.thnaks{
             }
             div:last-child{
                 display: flex;
-                grid-gap: 20px;
+                grid-gap: 30px;
                 align-items: center;
-                
+                margin-left: 7px;
                 a{
                     display: flex;
+                    position: relative;
+                    &::before{
+                        content: "";
+                        height: 40px;
+                        width: 40px;
+                        position: absolute;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: var(--color-anaranjado);
+                    }
+                    svg{
+                        z-index: 1;
+                        width: 20px;
+                    }
                 }
             }
         }
@@ -5396,6 +5432,10 @@ section.thnaks{
         right: 40px;
     }
 
+    section.menuMovil ul li a.select::before{
+        left: -45px;
+    }
+
     /* end 500px */
 }
 
@@ -5425,8 +5465,14 @@ section.thnaks{
 }
 
 @media (max-width: 425px) {
+    header nav .navigation ul li.menu-mobile {
+        padding-left: 5px;
+    }
     section.popup .content{
         margin: 0 15px;
+    }
+    header nav .navigation ul li.menu-mobile img {
+        height: 45px;
     }
     header nav .logo img {
         width: 125px;
