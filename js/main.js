@@ -272,6 +272,18 @@ MyApp = {
       });
     }
   },
+  swiper3: {
+    init: function () {
+      var swiper3 = new Swiper(".swiper3", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        slidesPerView: 'auto',
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+    }
+  },
   marquee: {
     init: function () {
       $('.marquee-with-options').marquee({
@@ -585,6 +597,9 @@ if ($('.home.swiper').length > 0) {
 
 if ($('.swiper2 ').length > 0) {
   MyApp.swiper2.init();
+}
+if ($('.swiper3 ').length > 0) {
+  MyApp.swiper3.init();
 }
 
 if ($('.contadorsec').length > 0) {

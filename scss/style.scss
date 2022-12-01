@@ -1764,6 +1764,9 @@ section.bannerInterna{
         }
     }
 }
+section.articuloContent .swiper3{
+    display: none;
+}
 
 section.datos{
     background: linear-gradient(180deg, #FE6D4D 0%, #FE4920 100%);
@@ -2203,31 +2206,43 @@ section.slider-proyecto{
         }
     }
     .swiper-button-next{
-        right: 16.5vw;
+        right: 15.8vw;
         bottom: 60px;
         top: initial;
+        width: 60px;
         left: auto;
     }
     .swiper-button-prev{
         right: 21vw;
         bottom: 60px;
         top: initial;
+        width: 60px;
         left: auto;
     }
     .swiper-button-next:after{
-        content: url(../img/flecha-next.svg);
+        content:'';
+        width: 60px;
+        height: 60px;
+        background-image: url('../img/flecha-next.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
     .swiper-button-next:hover{
         &::after{
-            content: url(../img/flecha-next-hover.svg);
+            background-image: url(../img/flecha-next-hover.svg);
         }
     }
     .swiper-button-prev:after{
-        content: url(../img/flecha-prev.svg);
+        content:'';
+        width: 60px;
+        height: 60px;
+        background-image: url('../img/flecha-prev.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
     .swiper-button-prev:hover{
         &:after{
-            content: url(../img/flecha-prev-hover.svg);
+            background-image: url(../img/flecha-prev-hover.svg);
         }
     }
 }
@@ -2258,7 +2273,7 @@ section.contactoInterna{
         div{
             border: 2px solid var(--color-anaranjado);
             position: absolute;
-            padding: 40px 35px;
+            padding: 40px 31px;
             border-radius: 36px;
             width: 383px;
             position: absolute;
@@ -3855,6 +3870,12 @@ section.thnaks{
 }
 
 @media (max-width: 1200px) {
+    .ht-cursor,
+    .ht-cursor2,
+    .ht-cursor3,
+    .ht-cursor4{
+        display: none !important;
+    }
     section.beneficios img.pareja {
         left: -288px;
     }
@@ -4138,6 +4159,12 @@ section.thnaks{
     section.contacto {
         padding: 80px 0;
     }
+    section.maps{
+        padding-bottom: 80px;
+    }
+    section.maps .lugaresCercanos {
+        padding-top: 80px;
+    }
     section.proyectos .contentProyectos,
     .articuloContent .relacionados{
         margin-top: 80px;
@@ -4225,9 +4252,6 @@ section.thnaks{
     }
     section.beneficios .container .part2 h3, section.beneficios .hei2 h3, section.call h3 {
         font-size: 30px;
-    }
-    section.beneficios .hei2 h3{
-        text-align: center;
     }
     section.beneficios .hei2{
         padding-top: 80px;
@@ -4835,6 +4859,10 @@ section.thnaks{
     .swiper-button-next, .swiper-button-prev{
         width: 38px;
     }
+    section.slider-proyecto .swiper-button-next,
+    section.slider-proyecto .swiper-button-prev{
+        width: 38px;
+    }
     section.slider-proyecto .swiper-button-next:after {
         width: 100%;
         height: 38px;
@@ -5188,7 +5216,7 @@ section.thnaks{
     }
     section.banner .info {
         width: 550px;
-        border-radius: 50px;
+        border-radius: 35px;
         padding: 50px;
         margin: 0 25px;
         box-shadow: -4px 3px 24px rgba(0, 0, 0, 0.44);
@@ -5626,20 +5654,21 @@ section.thnaks{
     }
     section.slider-2 .item-slider2 .imagen .estado span{
         font-size: 18px;
+        margin-left: 27px;
     }
     section.slider-2 .item-slider2 .info,
     section.proyectos .contentProyectos .item-slider2 .info {
-        padding: 10px 20px;
+        padding: 10px 15px;
         padding-top: 35px;
     }
     section.slider-2 .item-slider2 .info span,
     section.proyectos .contentProyectos .item-slider2 .info span {
-        padding: 10px 15px 10px 20px;
+        padding: 10px 15px 10px 15px;
     }
     section.slider-2 .item-slider2 .imagen .estado,
     section.proyectos .contentProyectos .item-slider2 .imagen .estado {
         top: 20px;
-        left: 20px;
+        left: 15px;
     }
     section.contadorsec .contadores .contador .info p {
         font-size: 20px;
@@ -5747,12 +5776,88 @@ section.thnaks{
         font-size: 30px;
     }
     section.slider-2 .item-slider2 .info .price {
-        padding: 33px 13px;
-        right: -22px;
+        padding: 35px 13px;
+        right: -16px;
     }
 
     section.menuMovil .container{
         justify-content: flex-start;
+    }
+
+    section.home .item-slider .adelante .info .ubicacion img{
+        width: 42px;
+    }
+    section.home .item-slider .adelante .info .ubicacion span{
+        margin-left: 30px;
+    }
+    
+    section.slider-2 .item-slider2 .imagen .estado img{
+        width: 48px;
+    }
+
+    section.proyectos .contentProyectos .item-slider2 .info .price{
+        padding: 35px 13px;
+        right: -20px;
+    }
+    section.proyectos .contentProyectos .item-slider2 .info .price div {
+        font-size: 16px;
+    }
+    section.proyectos .contentProyectos .item-slider2 .info .price div:last-child {
+        font-size: 30px;
+    }
+    section.proyectos .contentProyectos .item-slider2 .info span{
+        bottom: 74px;
+    }
+    section.proyectos .contentProyectos .item-slider2 .info p{
+        font-size: 18px;
+    }
+    footer .footer2 .part2 .container div {
+        padding: 30px 0;
+    }
+    footer .footer2 .part1 {
+        margin-bottom: 30px;
+    }
+    footer .footer2 .part1 .info a.libro {
+        margin-bottom: 30px;
+    }
+    footer .footer2 .part1 .info {
+        margin-top: 30px;
+    }
+    section.banner .info {
+        padding: 33px;
+    }
+    section.proyectos .container ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    section.proyectos .contentProyectos{
+        margin-top: 50px;
+    }
+    .articuloContent .relacionados .artRelacionados{
+        display: none;
+    }
+    section.articuloContent{
+        padding-bottom: 130px;
+    }
+
+    section.articuloContent .swiper3{
+        display: block;
+        margin-top: 50px;
+        position: relative;
+        .swiper-pagination{
+            bottom: -56px !important;
+        }
+    }
+
+    section.articuloContent .swiper3 .swiper-wrapper {
+        margin-left: 5vw;
+    }
+    section.articuloContent .swiper3 .swiper-wrapper .itemNoticia {
+        width: 89vw;
+    }
+    section.articuloContent .swiper3 .swiper-wrapper .itemNoticia:last-child{
+        margin-right: calc(5vw + 30px) !important;
     }
 
     /* end 500px */
@@ -5832,5 +5937,12 @@ section.thnaks{
     }
     section.historia .historiaContainer .cards .card .info {
         padding: 20px;
+    }
+    .formulario{
+        width: 100%;
+    }
+    .formulario form .form-colum{
+        flex-direction: column;
+        grid-gap: 0;
     }
 }
