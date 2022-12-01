@@ -1148,6 +1148,8 @@ footer {
           font-weight: 700;
           font-size: 20px;
           color: var(--color-gris); }
+        footer .footer2 .part2 .container .part2-1 p {
+          margin-left: 5px; }
       footer .footer2 .part2 .container .part2-2 {
         padding-left: 40px; }
     footer .footer2 .pie .container {
@@ -1453,7 +1455,7 @@ section.datos {
     background: linear-gradient(0deg, #565658 2.65%, #858585 97.35%);
     top: 0;
     bottom: 0;
-    width: calc(calc(100% - 655px) / 2); }
+    width: calc(calc(100% - 907px) / 2); }
   section.datos .container {
     display: flex;
     justify-content: space-between;
@@ -1462,26 +1464,32 @@ section.datos {
     display: flex;
     align-items: center;
     font-family: var(--fuente-Open);
-    font-size: 25px;
-    color: #fff; }
+    font-size: 22px;
+    color: #fff;
+    align-items: center; }
     section.datos div div img {
       margin-right: 10px; }
     section.datos div div span {
       font-weight: 700; }
     section.datos div div p {
-      font-weight: 400;
-      padding-left: 10px; }
+      font-weight: 400; }
+  section.datos .datosInfo {
+    flex-direction: column;
+    align-items: flex-start; }
   section.datos .part1 {
     padding-right: 80px; }
-  section.datos .part2 {
-    position: relative; }
-    section.datos .part2::after {
+  section.datos .izquierda {
+    position: relative;
+    width: 45%;
+    justify-content: space-between;
+    width: 455px; }
+    section.datos .izquierda::after {
       content: '';
       position: absolute;
-      top: -6px;
-      left: -70px;
+      top: 50%;
+      left: -50px;
       width: 70px;
-      height: 100%;
+      height: 120%;
       border-right: 6px solid #fff;
       border-top: 6px solid #fff;
       border-bottom: 6px solid #fff;
@@ -1489,33 +1497,33 @@ section.datos {
       -moz-border-radius: 0 100px 100px 0;
       -webkit-border-radius: 0 100px 100px 0;
       border-radius: 0 100px 100px 0;
-      transform: rotate(180deg); }
-    section.datos .part2 div {
-      position: relative;
-      z-index: 2; }
+      transform: rotate(180deg) translateY(50%); }
+  section.datos .part2 div {
+    position: relative;
+    z-index: 2; }
   section.datos .part3 {
     background: linear-gradient(0deg, #565658 2.65%, #858585 97.35%);
     position: relative;
-    margin-left: 120px; }
+    margin-left: 100px; }
     section.datos .part3 div {
       position: relative;
       z-index: 2; }
     section.datos .part3::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: -70px;
+      top: 50%;
+      left: -50px;
       width: 80px;
-      height: 100%;
+      height: 120%;
       background: linear-gradient(180deg, #565658 2.65%, #858585 97.35%);
       -moz-border-radius: 0 100px 100px 0;
       -webkit-border-radius: 0 100px 100px 0;
       border-radius: 0 100px 100px 0;
-      transform: rotate(180deg); }
+      transform: rotate(180deg) translateY(50%); }
   section.datos .part {
     padding: 30px 0; }
   section.datos .part1.part {
-    padding-right: 70px; }
+    padding-right: 55px; }
 
 .Header,
 .HoverCard,
@@ -2919,7 +2927,8 @@ section.thnaks {
     grid-gap: 127px; }
   section.beneficios img.pareja {
     height: 607px;
-    left: -247px; }
+    left: -247px;
+    top: -60px; }
   section.beneficios .container .part2 h3,
   section.beneficios .hei2 h3,
   section.call h3 {
@@ -3459,6 +3468,56 @@ section.thnaks {
         transform: initial;
         z-index: initial;
         margin-left: 10px; }
+  section.datos .container,
+  section.datos .izquierda {
+    flex-direction: column;
+    align-items: flex-start; }
+  section.datos .part1.part {
+    padding-right: 0;
+    width: 100%; }
+  section.datos .izquierda {
+    width: 100%; }
+  section.datos .izquierda::after,
+  section.datos::before {
+    content: none; }
+  section.datos .part3 {
+    margin-left: 0; }
+  section.datos .part3::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -52px;
+    height: 100%;
+    width: 52px;
+    background: linear-gradient(0deg, #565658 2.65%, #858585 97.35%);
+    border-radius: 0;
+    transform: rotate(0); }
+  section.datos .part3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -55px;
+    height: 100%;
+    width: 55px;
+    background: linear-gradient(0deg, #565658 2.65%, #858585 97.35%);
+    border-radius: 0;
+    transform: rotate(0); }
+  section.datos .part, section.datos div div {
+    width: 100%; }
+  section.datos .part2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 120%;
+    height: 4px;
+    background-color: #FFFFFF;
+    left: 50%;
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    background: #fff;
+    transform: translateX(-50%); }
   /* end 1024 */ }
 
 @media (max-width: 1024px) and (min-height: 880px) {
@@ -3518,7 +3577,8 @@ section.thnaks {
   section.nosotros .content {
     flex-direction: column; }
   section.nosotros .content .part1 {
-    width: 100%; }
+    width: 100%;
+    padding-right: 5vw; }
   section.nosotros .content .part2 {
     width: 100%; }
   section.nosotros .content .part2 .fondo {
@@ -3617,10 +3677,6 @@ section.thnaks {
   section.datos div div {
     flex-direction: column;
     align-items: flex-start; }
-  section.datos .part2::after,
-  section.datos .part3::after,
-  section.datos::before {
-    content: none; }
   section.datos .part3 {
     margin-left: 0px; }
   section.datos .part,
@@ -3629,42 +3685,6 @@ section.thnaks {
   section.datos div div.info {
     flex-direction: row;
     align-items: center; }
-  section.datos .part2::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 120%;
-    height: 4px;
-    background-color: #FFFFFF;
-    left: 50%;
-    border-radius: 0;
-    border-right: none;
-    border-top: none;
-    border-bottom: none;
-    background: #fff;
-    transform: translateX(-50%); }
-  section.datos .part3::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -40px;
-    height: 100%;
-    width: 40px;
-    background: linear-gradient(0deg, #565658 2.65%, #858585 97.35%);
-    border-radius: 0;
-    transform: rotate(0); }
-  section.datos .part3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -40px;
-    height: 100%;
-    width: 40px;
-    background: linear-gradient(0deg, #565658 2.65%, #858585 97.35%);
-    border-radius: 0;
-    transform: rotate(0); }
-  section.datos .part {
-    padding: 30px 0; }
   section.datos .part1.part {
     padding-right: 0; }
   section.maps .lugaresCercanos .lugaresContainer {
@@ -3736,13 +3756,17 @@ section.thnaks {
     bottom: -15px; } }
 
 @media (max-width: 950px) {
-  section.formularioReferidos .container {
+  section.formularioReferidos .container,
+  section.contacto .container {
     flex-direction: column-reverse; }
-  section.formularioReferidos .container .part1 {
+  section.formularioReferidos .container .part1,
+  section.contacto .container .part1 {
     margin-top: 50px; }
-  section.formularioReferidos .container .part1 {
+  section.formularioReferidos .container .part1,
+  section.contacto .container .part1 {
     width: 100%; }
-  section.formularioReferidos .container .part2 {
+  section.formularioReferidos .container .part2,
+  section.contacto .container .part2 {
     width: 100%;
     padding-left: 0px;
     justify-content: center; }
@@ -4131,6 +4155,12 @@ section.thnaks {
 @media (max-width: 750px) {
   section.contactoInterna .part1 div {
     right: 7vw; } }
+
+@media (max-width: 720px) {
+  footer .footer2 .part1 .info {
+    flex-direction: column; }
+  footer .footer2 .part1 .info a.libro {
+    margin-bottom: 35px; } }
 
 @media (max-width: 690px) {
   footer .footer2 .part1 .info {
