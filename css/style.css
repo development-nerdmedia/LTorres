@@ -1013,12 +1013,20 @@ section.call {
   justify-content: center; }
   section.call a.responsive, section.call div.btn {
     display: none; }
+    section.call a.responsive img, section.call div.btn img {
+      width: auto;
+      height: auto; }
   section.call img {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -2; }
+    z-index: -2;
+    width: 1920px;
+    height: 1204px; }
+  section.call img:first-child {
+    width: 1920px;
+    height: 1204px; }
   section.call .filtro {
     position: absolute;
     top: 0;
@@ -2219,7 +2227,8 @@ section.formularioReferidos {
         align-items: center; }
         section.formularioReferidos .container .part2 .formulario .checkbox-box input {
           -webkit-appearance: auto;
-          width: 0; }
+          width: 0;
+          display: none; }
         section.formularioReferidos .container .part2 .formulario .checkbox-box label {
           width: 20px;
           height: 20px;
