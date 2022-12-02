@@ -78,12 +78,13 @@ document.addEventListener("click", function (e) {
     // formespacioselect.forEach(function (shinyItem2) {
     //     shinyItem2.parentElement.classList.remove("active");
     // })
-    if (e.target.parentElement.classList.contains("active")) {
-      e.target.parentElement.classList.remove("active");
-    }else{
-      e.target.parentElement.classList.add("active");
-    }
-  } 
+    // if (e.target.parentElement.classList.contains("active")) {
+      // e.target.parentElement.classList.remove("active");
+    // }else{
+      e.target.parentElement.classList.toggle("active");
+      console.log("aprietas el select");
+    // }
+  }
   else {
     formespacioselect.forEach(function (shinyItem2) {
         shinyItem2.parentElement.classList.remove("active")
@@ -499,6 +500,7 @@ MyApp = {
       document.querySelector("#numeroDoc").classList.remove("form-input");
 
       $("#documento").change(function(){
+        // document.querySelector("#documento").parentElement.classList.remove("active");
         if ($("#documento").val() !== '') {
           $("#numeroDoc").css('opacity','1');
           $('#numeroDoc').css('pointer-events', 'auto');
