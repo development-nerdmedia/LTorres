@@ -1022,9 +1022,6 @@ section.call {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -2; }
-  section.call img:first-child {
-    width: 1920px;
-    height: 1204px; }
   section.call .filtro {
     position: absolute;
     top: 0;
