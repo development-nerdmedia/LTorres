@@ -1216,8 +1216,8 @@ section.call{
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: -2;
-        // width: 1920px;
-        // height: 1204px;
+        width: 1920px;
+        height: 1204px;
     }
     .filtro{
         position: absolute;
@@ -5899,6 +5899,9 @@ section.thnaks{
 }
 
 @media (max-width: 425px) {
+    section.beneficios img.pareja {
+        top: -29px;
+    }
     section.menuMovil {
         height: calc(100vh - 80px);
     }
