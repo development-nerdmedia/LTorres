@@ -1243,6 +1243,12 @@ section.call{
     }
 }
 
+body.iphone{
+    section.call img {
+        position: absolute;
+    }
+}
+
 footer{
     background-color: #fff;
     overflow: hidden;

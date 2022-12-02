@@ -1041,6 +1041,9 @@ section.call {
     section.call h3 b {
       font-weight: 800; }
 
+body.iphone section.call img {
+  position: absolute; }
+
 footer {
   background-color: #fff;
   overflow: hidden; }
