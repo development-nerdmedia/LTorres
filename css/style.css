@@ -4439,9 +4439,7 @@ section.thnaks {
   section.articuloContent .swiper3 .swiper-wrapper {
     margin-left: 5vw; }
   section.articuloContent .swiper3 .swiper-wrapper .itemNoticia {
-    width: 89vw; }
-  section.articuloContent .swiper3 .swiper-wrapper .itemNoticia:last-child {
-    margin-right: calc(5vw + 30px) !important; }
+    padding-right: 10vw; }
   section.popup .info img.fondo {
     width: 100%;
     height: 100%; }

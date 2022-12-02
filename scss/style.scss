@@ -5861,11 +5861,12 @@ section.thnaks{
         margin-left: 5vw;
     }
     section.articuloContent .swiper3 .swiper-wrapper .itemNoticia {
-        width: 89vw;
+        // width: 89vw;
+        padding-right: 10vw;
     }
-    section.articuloContent .swiper3 .swiper-wrapper .itemNoticia:last-child{
-        margin-right: calc(5vw + 30px) !important;
-    }
+    // section.articuloContent .swiper3 .swiper-wrapper .itemNoticia:last-child{
+    //     margin-right: calc(5vw + 30px) !important;
+    // }
     section.popup .info img.fondo {
         width: 100%;
         height: 100%;
