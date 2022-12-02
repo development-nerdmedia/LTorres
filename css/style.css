@@ -4442,6 +4442,9 @@ section.thnaks {
     width: 89vw; }
   section.articuloContent .swiper3 .swiper-wrapper .itemNoticia:last-child {
     margin-right: calc(5vw + 30px) !important; }
+  section.popup .info img.fondo {
+    width: 100%;
+    height: 100%; }
   /* end 500px */ }
 
 @media (max-width: 430px) {
