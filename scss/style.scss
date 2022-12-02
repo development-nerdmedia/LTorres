@@ -78,7 +78,7 @@ body{
 }
 
 body.hide-scrolling {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 section{
@@ -5954,5 +5954,9 @@ section.thnaks{
     .formulario form .form-colum{
         flex-direction: column;
         grid-gap: 0;
+    }
+    section.proyectos .contentProyectos .item-slider2 .info span,
+    section.slider-2 .item-slider2 .info span{
+        max-width: 188px;
     }
 }
