@@ -1183,7 +1183,8 @@ section.banner {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent; }
+  background-color: transparent;
+  z-index: 5; }
   section.banner .fondo img {
     width: auto;
     height: 100%;
