@@ -3566,6 +3566,12 @@ section.thnaks {
     width: 100%; }
   section.bajada .container .part1 h3 {
     margin-bottom: 30px; }
+  section.proyectos .contentProyectos .item-slider2 .imagen .estado span {
+    padding: 9px 15px 9px 30px; }
+  section.proyectos .contentProyectos .item-slider2 .imagen .estado {
+    position: absolute;
+    top: 15px;
+    left: 30px; }
   /* end 1024 */ }
 
 @media (max-width: 1024px) and (min-height: 880px) {
@@ -3620,8 +3626,9 @@ section.thnaks {
     max-width: 226px; }
   section.proyectos .contentProyectos .item-slider2 .imagen .estado {
     position: absolute;
-    top: 30px;
     left: 20px; }
+  section.proyectos .contentProyectos .item-slider2 .imagen .estado img {
+    width: 50px; }
   section.nosotros .content {
     flex-direction: column; }
   section.nosotros .content .part1 {
