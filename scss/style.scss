@@ -320,6 +320,7 @@ section.popup{
         z-index: 2;
         filter: drop-shadow(13px 8px 55px rgba(0, 0, 0, 0.35));
         margin: 0 35px;
+        border-radius: 20px;
         .close{
             position: absolute;
             top: -24px;
@@ -931,10 +932,13 @@ section.contadorsec{
         align-items: flex-start;
         h3{
             font-family: var(--fuente-Raleway);
-            font-weight: 800;
+            font-weight: 600;
             font-size: 40px;
             max-width: 772px;
             color: #fff;
+            b{
+                font-weight: 800;
+            }
         }
         a{
             color: #fff;
@@ -1185,6 +1189,10 @@ section.beneficios{
             div{
                 img{
                     width: 100%;
+                    transition: 0.2s linear;
+                    &:hover{
+                        transform: translateY(-10px);
+                    }
                 }
             }
         }
@@ -2569,8 +2577,11 @@ section.misionVisio{
     color: #fff;
     h2{
         font-family: var(--fuente-Raleway);
-        font-weight: 800;
+        font-weight: 600;
         font-size: 40px;
+        b{
+            font-weight: 800;
+        }
     }
     p{
         margin-top: 20px;
@@ -3941,6 +3952,12 @@ section.thnaks{
     // }
 }
 
+@media (max-width: 1050px){
+    .elementos .elementosContent .itemElemento h3{
+        font-size: 22px;
+    }
+}
+
 @media (max-width: 1024px) {   
 
     .linea1,
@@ -4553,6 +4570,17 @@ section.thnaks{
         transform: translateX(-50%);
     }
 
+    section.bajada .container {
+        flex-direction: column;
+        grid-gap: 0;
+    }
+    section.bajada .container .part1, section.bajada .container .part2 {
+        width: 100%;
+    }
+
+    section.bajada .container .part1 h3 {
+        margin-bottom: 30px;
+    }
 
     /* end 1024 */
 }
@@ -4666,6 +4694,12 @@ section.thnaks{
         width: 100%;
     }
 
+}
+
+@media (max-width: 965px){
+    .elementos .elementosContent{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
@@ -4937,11 +4971,21 @@ section.thnaks{
 }
 
 @media (max-width: 950px) {
-    section.formularioReferidos .container,
+    section.formularioReferidos .container{
+        flex-direction: column;
+    }
+    section.formularioReferidos .container .part1 .imgScroll img{
+        display: none;
+    }
     section.contacto .container{
         flex-direction: column-reverse;
     }
-    section.formularioReferidos .container .part1,
+    section.formularioReferidos .container .part1 .imgScroll h3{
+        margin: 0px 0 30px 0;
+    }
+    section.formularioReferidos .container .part1{
+        margin-bottom: 50px;
+    }
     section.contacto .container .part1{
         margin-top: 50px;
     }
@@ -5371,7 +5415,7 @@ section.thnaks{
         margin: 0 31px;
         margin-top: 50px;
     }
-    section.formularioReferidos .container,
+    
     section.contacto .container{
         flex-direction: column-reverse;
     }
@@ -5387,7 +5431,7 @@ section.thnaks{
         padding-left: 0px;
         justify-content: center;
     }
-    section.formularioReferidos .container .part1,
+    
     section.contacto .container .part1{
         margin-top: 50px;
     }

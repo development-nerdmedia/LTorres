@@ -298,7 +298,8 @@ section.popup {
     position: relative;
     z-index: 2;
     filter: drop-shadow(13px 8px 55px rgba(0, 0, 0, 0.35));
-    margin: 0 35px; }
+    margin: 0 35px;
+    border-radius: 20px; }
     section.popup .content .close {
       position: absolute;
       top: -24px;
@@ -797,10 +798,12 @@ section.contadorsec {
     align-items: flex-start; }
     section.contadorsec .top h3 {
       font-family: var(--fuente-Raleway);
-      font-weight: 800;
+      font-weight: 600;
       font-size: 40px;
       max-width: 772px;
       color: #fff; }
+      section.contadorsec .top h3 b {
+        font-weight: 800; }
     section.contadorsec .top a {
       color: #fff;
       display: flex;
@@ -998,7 +1001,10 @@ section.beneficios {
       padding-top: 100px;
       grid-gap: 100px; }
       section.beneficios .hei2 .icons div img {
-        width: 100%; }
+        width: 100%;
+        transition: 0.2s linear; }
+        section.beneficios .hei2 .icons div img:hover {
+          transform: translateY(-10px); }
 
 a.sectionCall {
   text-decoration: none; }
@@ -2074,8 +2080,10 @@ section.misionVisio {
   color: #fff; }
   .elementos h2 {
     font-family: var(--fuente-Raleway);
-    font-weight: 800;
+    font-weight: 600;
     font-size: 40px; }
+    .elementos h2 b {
+      font-weight: 800; }
   .elementos p {
     margin-top: 20px;
     font-family: var(--fuente-Open);
@@ -3096,6 +3104,10 @@ section.thnaks {
   section.beneficios .container .part2 .animacion {
     display: none; } }
 
+@media (max-width: 1050px) {
+  .elementos .elementosContent .itemElemento h3 {
+    font-size: 22px; } }
+
 @media (max-width: 1024px) {
   .linea1,
   .linea2,
@@ -3547,6 +3559,13 @@ section.thnaks {
     border-bottom: none;
     background: #fff;
     transform: translateX(-50%); }
+  section.bajada .container {
+    flex-direction: column;
+    grid-gap: 0; }
+  section.bajada .container .part1, section.bajada .container .part2 {
+    width: 100%; }
+  section.bajada .container .part1 h3 {
+    margin-bottom: 30px; }
   /* end 1024 */ }
 
 @media (max-width: 1024px) and (min-height: 880px) {
@@ -3627,6 +3646,10 @@ section.thnaks {
     top: initial;
     transform: initial;
     width: 100%; } }
+
+@media (max-width: 965px) {
+  .elementos .elementosContent {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media (max-width: 960px) {
   section.contactoInterna .container {
@@ -3788,10 +3811,16 @@ section.thnaks {
     bottom: -15px; } }
 
 @media (max-width: 950px) {
-  section.formularioReferidos .container,
+  section.formularioReferidos .container {
+    flex-direction: column; }
+  section.formularioReferidos .container .part1 .imgScroll img {
+    display: none; }
   section.contacto .container {
     flex-direction: column-reverse; }
-  section.formularioReferidos .container .part1,
+  section.formularioReferidos .container .part1 .imgScroll h3 {
+    margin: 0px 0 30px 0; }
+  section.formularioReferidos .container .part1 {
+    margin-bottom: 50px; }
   section.contacto .container .part1 {
     margin-top: 50px; }
   section.formularioReferidos .container .part1,
@@ -4098,7 +4127,6 @@ section.thnaks {
   .elementos .elementosContent {
     margin: 0 31px;
     margin-top: 50px; }
-  section.formularioReferidos .container,
   section.contacto .container {
     flex-direction: column-reverse; }
   section.formularioReferidos .container .part1,
@@ -4110,7 +4138,6 @@ section.thnaks {
     width: 100%;
     padding-left: 0px;
     justify-content: center; }
-  section.formularioReferidos .container .part1,
   section.contacto .container .part1 {
     margin-top: 50px; }
   section.misionVisio .container .part h2, section.historia h2, section.formularioReferidos .container .part1 .imgScroll h3 {
