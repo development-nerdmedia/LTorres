@@ -4217,6 +4217,10 @@ section.thnaks {
     padding-bottom: 50px; }
   .swiper-pagination-bullet-active {
     background: var(--color-anaranjado); }
+  section.bannerInterna .part1 h2 {
+    margin-bottom: 20px; }
+  section.bannerInterna .part2 .compartir {
+    padding-top: 50px; }
   /* end 768 */ }
 
 @media (max-width: 750px) {
@@ -4256,6 +4260,10 @@ section.thnaks {
     margin-top: 0; }
   section.historia .historiaContainer .cards .cardItem:last-child {
     margin-bottom: 0; } }
+
+@media (max-width: 636px) {
+  section.proyectos .container ul {
+    display: none; } }
 
 @media (max-width: 590px) {
   section.contactoInterna .part1 div {
@@ -4479,6 +4487,8 @@ section.thnaks {
   section.popup .info img.fondo {
     width: 100%;
     height: 100%; }
+  section.contactoInterna .part1 div {
+    border-radius: 35px; }
   /* end 500px */ }
 
 @media (max-width: 430px) {
@@ -4541,4 +4551,10 @@ section.thnaks {
     grid-gap: 0; }
   section.proyectos .contentProyectos .item-slider2 .info span,
   section.slider-2 .item-slider2 .info span {
-    max-width: 188px; } }
+    max-width: 188px; }
+  section.popup .content .price {
+    padding: 36px 14px; } }
+
+@media (max-width: 382px) {
+  .elementos .elementosContent .itemElemento {
+    padding: 30px 15px; } }
