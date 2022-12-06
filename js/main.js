@@ -356,6 +356,38 @@ MyApp = {
       })
     }
   },
+  selectCategorias:{
+    init: function () {
+      var select = document.getElementById('categoryPortfolio');
+      var categoriaServices = localStorage.getItem("CatNovedad");
+
+      if (categoriaServices !== "none") {        
+        document.querySelector('#categoryPortfolio [value="' + categoriaServices + '"]').selected = true;
+      }      
+
+      select.addEventListener('change', function () {
+        var selectedOption = this.options[select.selectedIndex];
+        var cateSelect = selectedOption.text.trimStart().trimEnd();
+
+        $(`.item-slider2`).not(`[data-category="${cateSelect}"]`).hide();
+        $(`.item-slider2[data-category="${cateSelect}"]`).show();
+          if (cateSelect === "Todos") {
+          $(`.item-slider2`).show();
+        }
+      });
+      
+      document.addEventListener("click", function (e) {
+        if (e.target.closest("#categoryPortfolio")) {
+            e.target.parentElement.classList.add("active");
+        }
+        else {
+          document.querySelector(".contentCategorias form").classList.remove("active");
+        }
+      })
+
+
+    }
+  },
   sliderProyecto: {
     init: function () {
       var swiper = new Swiper(".slider-proyecto", {
@@ -623,8 +655,12 @@ if ($('.marquee-with-options').length > 0) {
   MyApp.marquee.init();
 }
 
-if ($('.contentCategorias').length > 0) {
+if ($('.contentCategorias ul').length > 0) {
   MyApp.contentCategorias.init();
+}
+
+if ($('.contentCategorias form').length > 0) {
+  MyApp.selectCategorias.init();
 }
 
 if ($('.popup.inicio').length > 0) {

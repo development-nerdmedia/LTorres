@@ -632,6 +632,9 @@ section.home {
   100% {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0); } }
 
+section.proyectos .container form {
+  display: none; }
+
 section.slider-2 {
   padding: 100px 0; }
   section.slider-2 .top {
@@ -4263,7 +4266,42 @@ section.thnaks {
 
 @media (max-width: 636px) {
   section.proyectos .container ul {
-    display: none; } }
+    display: none; }
+  section.proyectos .container form {
+    position: relative;
+    display: block; }
+    section.proyectos .container form select {
+      width: 100%;
+      color: #fff;
+      background-color: var(--color-gris);
+      -moz-appearance: none;
+      border-radius: 40px;
+      padding: 12px 25px;
+      -webkit-appearance: none;
+      position: relative;
+      outline: none !important;
+      font-family: var(--fuente-Raleway);
+      font-weight: 800;
+      font-size: 22px; }
+      section.proyectos .container form select option {
+        font-weight: 800;
+        border: none !important;
+        outline: none !important; }
+    section.proyectos .container form::before {
+      content: '';
+      background-image: url(../img/flecha-blanca-abajo2.svg);
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      pointer-events: none; }
+  section.proyectos .container form.active::before {
+    transform: translateY(-50%) rotate(180deg); } }
 
 @media (max-width: 590px) {
   section.contactoInterna .part1 div {
@@ -4464,10 +4502,6 @@ section.thnaks {
     margin-top: 30px; }
   section.banner .info {
     padding: 33px; }
-  section.proyectos .container ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
   section.proyectos .contentProyectos {
     margin-top: 50px; }
   .articuloContent .relacionados .artRelacionados {
