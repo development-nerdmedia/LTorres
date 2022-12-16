@@ -304,7 +304,10 @@ section.popup {
       position: absolute;
       top: -24px;
       right: -69px;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: 0.5s; }
+      section.popup .content .close:hover {
+        transform: scale(1.1); }
     section.popup .content .price {
       position: absolute;
       right: -68px;
@@ -4143,8 +4146,9 @@ section.thnaks {
   section.contactoInterna .muesca1 {
     display: none; }
   section.contactoInterna .part1 div img {
-    left: -21px;
-    top: 52px; }
+    left: -22px;
+    top: 52px;
+    width: 23px; }
   section.misionVisio .container {
     flex-direction: column; }
   section.misionVisio .container .part {
@@ -4408,7 +4412,8 @@ section.thnaks {
     width: 88vw; }
   section.slider-2 .item-slider2 .imagen .estado span {
     font-size: 18px;
-    margin-left: 27px; }
+    margin-left: 27px;
+    padding: 10px 15px 11px 30px; }
   section.slider-2 .item-slider2 .info,
   section.proyectos .contentProyectos .item-slider2 .info {
     padding: 10px 15px;
@@ -4455,7 +4460,7 @@ section.thnaks {
   section.contactoInterna .part1 div img {
     position: absolute;
     top: 45px;
-    left: -21px; }
+    left: -22px; }
   section.contactoInterna .part1 div {
     padding: 20px;
     right: 0vw;
@@ -4499,7 +4504,8 @@ section.thnaks {
   section.home .item-slider .adelante .info .ubicacion img {
     width: 42px; }
   section.home .item-slider .adelante .info .ubicacion span {
-    margin-left: 30px; }
+    margin-left: 30px;
+    padding: 9px 15px 9px 18px; }
   section.slider-2 .item-slider2 .imagen .estado img {
     width: 48px; }
   section.proyectos .contentProyectos .item-slider2 .info .price {
@@ -4544,6 +4550,10 @@ section.thnaks {
     height: 100%; }
   section.contactoInterna .part1 div {
     border-radius: 35px; }
+  .elementos .elementosContent .itemElemento h3 {
+    font-size: 20px; }
+  section.articuloContent .swiper3 .swiper-pagination {
+    z-index: 2; }
   /* end 500px */ }
 
 @media (max-width: 430px) {
@@ -4612,4 +4622,8 @@ section.thnaks {
 
 @media (max-width: 382px) {
   .elementos .elementosContent .itemElemento {
-    padding: 30px 15px; } }
+    padding: 30px 15px; }
+  section.popup .content .close img {
+    width: 40px; }
+  section.popup .content .close {
+    top: -57px; } }

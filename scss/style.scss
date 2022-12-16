@@ -326,6 +326,10 @@ section.popup{
             top: -24px;
             right: -69px;        
             cursor: pointer;
+            transition: 0.5s;
+            &:hover{
+                transform: scale(1.1);
+            }
         }
         .price{
             position: absolute;
@@ -5439,8 +5443,9 @@ section.thnaks{
         display: none;
     }
     section.contactoInterna .part1 div img {
-        left: -21px;
+        left: -22px;
         top: 52px;
+        width: 23px;
     }
     section.misionVisio .container{
         flex-direction: column;
@@ -5814,6 +5819,7 @@ section.thnaks{
     section.slider-2 .item-slider2 .imagen .estado span{
         font-size: 18px;
         margin-left: 27px;
+        padding: 10px 15px 11px 30px;
     }
     section.slider-2 .item-slider2 .info,
     section.proyectos .contentProyectos .item-slider2 .info {
@@ -5878,7 +5884,7 @@ section.thnaks{
     section.contactoInterna .part1 div img {
         position: absolute;
         top: 45px;
-        left: -21px;
+        left: -22px;
     }
     section.contactoInterna .part1 div {
         padding: 20px;
@@ -5948,6 +5954,7 @@ section.thnaks{
     }
     section.home .item-slider .adelante .info .ubicacion span{
         margin-left: 30px;
+        padding: 9px 15px 9px 18px;
     }
     
     section.slider-2 .item-slider2 .imagen .estado img{
@@ -6025,6 +6032,12 @@ section.thnaks{
     }
     section.contactoInterna .part1 div{
         border-radius: 35px;
+    }
+    .elementos .elementosContent .itemElemento h3 {
+        font-size: 20px;
+    }
+    section.articuloContent .swiper3 .swiper-pagination{
+        z-index: 2;
     }
 
     /* end 500px */
@@ -6127,5 +6140,11 @@ section.thnaks{
 @media (max-width: 382px) {
     .elementos .elementosContent .itemElemento{
         padding: 30px 15px;
+    }
+    section.popup .content .close img {
+        width: 40px;
+    }
+    section.popup .content .close {
+        top: -57px;
     }
 }
