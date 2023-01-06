@@ -102,6 +102,30 @@ document.addEventListener("click", function (e) {
     });
   }
 
+  if (e.target.closest("section.formularioReferidos .container .part2 .formulario .agregar button")) {
+    e.preventDefault();
+
+    var formRef = document.querySelectorAll("section.formularioReferidos .container .part2 .formulario .refediros-grupo");    
+    var buttonRef = document.querySelector("section.formularioReferidos .container .part2 .formulario .agregar button");
+    var inputsref = document.querySelectorAll("section.formularioReferidos .container .part2 .formulario .refediros-grupo input");    
+    var selectreft = document.querySelectorAll("section.formularioReferidos .container .part2 .formulario .refediros-grupo select");
+
+    for (let i = 0; i < formRef.length; i++) {
+      formRef[i].classList.add("active");
+      formRef[i].querySelector("h4").classList.add("active");
+    }
+
+    for (let i = 0; i < inputsref.length; i++) {
+      inputsref[i].classList.add("form-input");
+    }
+
+    for (let i = 0; i < selectreft.length; i++) {
+      selectreft[i].classList.add("form-input");
+    }
+
+    buttonRef.classList.add("ocul");
+  }
+
 
   if (e.target.closest("section.bannerInterna .part2 a.categoria")) {
     const titleProyect = e.target.getAttribute('data-category');
@@ -447,7 +471,7 @@ MyApp = {
           if (cantidad === numbermeta) {
             clearInterval(tiempo)
           }
-        }, 60);
+        }, 100);
 
         const numbermeta2 = parseInt(meta[1].textContent)
         let cantidad2 = 0;
@@ -456,10 +480,10 @@ MyApp = {
           cantidad2 += 1
           numero[1].textContent = cantidad2
 
-          if (cantidad2 === numbermeta2) {
+          if (cantidad2 >= numbermeta2) {
             clearInterval(tiempo2)
           }
-        }, 30);
+        }, 1);
 
 
         const numbermeta3 = parseInt(meta[2].textContent)
@@ -472,7 +496,7 @@ MyApp = {
           if (cantidad3 === numbermeta3) {
             clearInterval(tiempo3)
           }
-        }, 38);
+        }, 150);
       })
 
 
@@ -497,25 +521,13 @@ MyApp = {
       
     }
   },
-  formularioReferidos:{
-    init: function () {
-      document.addEventListener("click", (e) => {
-        if (e.target.closest(".labelTerminos")) {
-          document.querySelector(".labelTerminos").classList.toggle("activo");
-        }
-        if (e.target.closest(".labelPoliticas")) {
-          document.querySelector(".labelPoliticas").classList.toggle("activo");
-        }
-      });
-    }
-  },
   validateForm:{
     init: function () {
 
       $(document).on("wheel", "input[type=number]", function (e) { $(this).blur(); });
 
       var formespacioinput = document.querySelectorAll('.formulario .form-input');
-      var formespacioselect = document.querySelectorAll('.formulario select');
+      var formespacioselect = document.querySelectorAll('.formulario select.form-input');
       var formespaciocheck = document.querySelectorAll(".formulario input[type='checkbox']");
 
 
@@ -535,13 +547,14 @@ MyApp = {
         }
       }
 
-      $("#numeroDoc").css('opacity','0.5')
-      $('#numeroDoc').prop('disabled', false);
-      $('#numeroDoc').css('pointer-events', 'none');
-      document.querySelector("#numeroDoc").classList.remove("formSelect");
-      document.querySelector("#numeroDoc").classList.remove("wpcf7-validates-as-required");
-      document.querySelector("#numeroDoc").classList.remove("form-input");
-
+      if (document.getElementById("numeroDoc")) {
+        $("#numeroDoc").css('opacity','0.5')
+        $('#numeroDoc').prop('disabled', false);
+        $('#numeroDoc').css('pointer-events', 'none');
+        document.querySelector("#numeroDoc").classList.remove("formSelect");
+        document.querySelector("#numeroDoc").classList.remove("wpcf7-validates-as-required");
+        document.querySelector("#numeroDoc").classList.remove("form-input");
+        
       $("#documento").change(function(){
         // document.querySelector("#documento").parentElement.classList.remove("active");
         if ($("#documento").val() !== '') {
@@ -557,6 +570,9 @@ MyApp = {
               document.querySelector("#numeroDoc").classList.remove("falta");
         }
       })
+      }
+
+      
 
       function validateInput(e) {
         formespacioinput = document.querySelectorAll('.formulario .form-input');
@@ -573,8 +589,14 @@ MyApp = {
       function validateCheck(e){
         formespaciocheck = document.querySelectorAll(".formulario input[type='checkbox']");
         for (let i = 0; i < formespaciocheck.length; i++) {
-          if (formespaciocheck[i].classList.contains("activo")) {            
-            e.preventDefault();
+          //if (formespaciocheck[i].classList.contains("activo")) {            
+            //e.preventDefault();
+            //console.log("a");
+          //}
+          if (formespaciocheck[i].checked) {
+            formespaciocheck[i].parentElement.parentElement.classList.remove("falta");
+          } else {
+            formespaciocheck[i].parentElement.parentElement.classList.add("falta");
           }
         }
       }
@@ -583,6 +605,14 @@ MyApp = {
         
         if (e.target.closest(".formulario form .enviar button")) {
           localStorage.setItem('URL', URLactual);
+        }
+
+        if (e.target.closest(".labelTerminos")) {
+          document.querySelector(".labelTerminos").classList.toggle("activo");
+        }
+
+        if (e.target.closest(".checkbox-box input")) {
+          document.querySelector(".labelPoliticas").classList.toggle("activo");
         }
 
         if (e.target.closest(".formulario form .enviar button[type='submit']")) {
@@ -626,9 +656,22 @@ MyApp = {
         }
       })
 
-    }
-    
+    }   
+  },
+  fecha:{
+    init: function () {
 
+      var fecha = new Date();
+      var dia = ("0" + fecha.getDate()).slice(-2);
+      var mes = ("0" + (fecha.getMonth() + 1)).slice(-2);
+      var anio = fecha.getFullYear().toString();
+      var fechaFormateada = dia + "/" + mes + "/" + anio;
+      
+      console.log(fechaFormateada); 
+
+      var fechainput = document.getElementById("fecha");
+      fechainput.innerHTML = fechaFormateada;
+    }
   }
 }
 
@@ -686,6 +729,9 @@ if ($('.formulario').length > 0) {
 
 if ($('.thnaks').length > 0) {
   MyApp.Gracias.init();
+}
+if ($('section.libro-bajada .datosCliente .fecha').length > 0) {
+  MyApp.fecha.init();
 }
 
 
