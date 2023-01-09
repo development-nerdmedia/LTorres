@@ -158,8 +158,13 @@ body{
     .ht-cursor-text4{
       transform: scale(1);
     }
-  }
+}
 
+.swal2-close {
+    -webkit-tap-highlight-color: #ffffff00 !important;
+    outline: none;
+    box-shadow: none;
+}
 
 
 ul{
@@ -347,6 +352,7 @@ section.popup{
             div:last-child {
                 font-size: 40px;
                 line-height: 40px;
+                text-align: center;
             }
         }
         a{
@@ -1432,6 +1438,8 @@ footer{
             .container .part2-1{
                 display: flex;
                 padding-right: 40px;
+                flex-wrap: wrap;
+                grid-gap: 5px;
                 // p{
                 //     margin-left: 10px;
                 // }
@@ -1441,22 +1449,17 @@ footer{
                     font-size: 20px;
                     color: var(--color-gris);
                 }
-                p{
-                    margin-left: 5px;
-                }
             }
             .container .part2-2{
                 padding-left: 40px;
                 display: flex;
                 justify-content: flex-end;
+                grid-gap: 5px;
                 span{
                     font-family: var(--fuente-Open);
                     font-weight: 700;
                     font-size: 20px;
                     color: var(--color-gris);
-                }
-                p{
-                    margin-left: 5px;
                 }
             }
         }
@@ -2565,6 +2568,7 @@ section.contactoInterna{
             height: 20px;
             border: 2px solid var(--color-anaranjado);
             display: inline-block;
+            cursor: pointer;
         }
         label.activo{
             border: 2px solid #fff;
@@ -6060,6 +6064,10 @@ section.libro-bajada{
     }
     section.slider-2 .item-slider2 .info .price div:last-child {
         font-size: 32px;
+    }
+
+    footer .footer2 .part2 .part2-1 p{
+        text-align: center;
     }
 
     /* end 768 */

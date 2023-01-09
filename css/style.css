@@ -179,6 +179,11 @@ body {
 .ht-cursor4.mostrar .ht-cursor-text4 {
   transform: scale(1); }
 
+.swal2-close {
+  -webkit-tap-highlight-color: #ffffff00 !important;
+  outline: none;
+  box-shadow: none; }
+
 ul {
   list-style: none; }
   ul li {
@@ -322,7 +327,8 @@ section.popup {
         font-size: 20px; }
       section.popup .content .price div:last-child {
         font-size: 40px;
-        line-height: 40px; }
+        line-height: 40px;
+        text-align: center; }
     section.popup .content a {
       color: #fff;
       padding: 15px;
@@ -1180,25 +1186,24 @@ footer {
           font-weight: 700; }
       footer .footer2 .part2 .container .part2-1 {
         display: flex;
-        padding-right: 40px; }
+        padding-right: 40px;
+        flex-wrap: wrap;
+        grid-gap: 5px; }
         footer .footer2 .part2 .container .part2-1 span {
           font-family: var(--fuente-Open);
           font-weight: 700;
           font-size: 20px;
           color: var(--color-gris); }
-        footer .footer2 .part2 .container .part2-1 p {
-          margin-left: 5px; }
       footer .footer2 .part2 .container .part2-2 {
         padding-left: 40px;
         display: flex;
-        justify-content: flex-end; }
+        justify-content: flex-end;
+        grid-gap: 5px; }
         footer .footer2 .part2 .container .part2-2 span {
           font-family: var(--fuente-Open);
           font-weight: 700;
           font-size: 20px;
           color: var(--color-gris); }
-        footer .footer2 .part2 .container .part2-2 p {
-          margin-left: 5px; }
     footer .footer2 .pie .container {
       display: flex;
       justify-content: space-between;
@@ -2061,7 +2066,8 @@ section.contactoInterna {
       width: 20px;
       height: 20px;
       border: 2px solid var(--color-anaranjado);
-      display: inline-block; }
+      display: inline-block;
+      cursor: pointer; }
     .formulario .checkbox-box label.activo {
       border: 2px solid #fff;
       background-color: #fff;
@@ -4570,6 +4576,8 @@ section.libro-bajada {
     height: 150px; }
   section.slider-2 .item-slider2 .info .price div:last-child {
     font-size: 32px; }
+  footer .footer2 .part2 .part2-1 p {
+    text-align: center; }
   /* end 768 */ }
 
 @media (max-width: 750px) {

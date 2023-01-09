@@ -720,7 +720,6 @@ if ($('.historia').length > 0) {
 
 if ($('.formularioReferidos').length > 0) {
   MyApp.imgReferidos.init();
-  MyApp.formularioReferidos.init();
 }
 
 if ($('.formulario').length > 0) {
